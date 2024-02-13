@@ -1,8 +1,12 @@
 <template>
-  首页
+  <div>
+    模型
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+</script>
 
 <style lang="scss" scoped>
 

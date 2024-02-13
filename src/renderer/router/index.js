@@ -1,11 +1,35 @@
+import Layout from "@/layout/index.vue";
 import Home from "@/views/home.vue";
+
 import {createRouter, createWebHistory} from 'vue-router';
 import NotFound from "@/components/NotFound.vue";
+import Model from "@/views/model/index.vue"
+import CommunicationGroups from '@/views/communication_groups/index.vue';
+import About from '@/views/about/index.vue';
 
 const routes = [
     {
         path: "/",
-        component: Home
+        component: Layout,
+        redirect: "/home",
+        children: [
+            {
+                path: "home",
+                component: Home
+            },
+            {
+                path: "model",
+                component: Model
+            },
+            {
+                path: "communicationGroups",
+                component: CommunicationGroups
+            },
+            {
+                path: "about",
+                component: About
+            },
+        ]
     },
     {path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound},
 ]
