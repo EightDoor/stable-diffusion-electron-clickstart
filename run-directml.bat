@@ -4,4 +4,9 @@ call environment.bat
 
 cd %~dp0webui-directml
 
-call webui-user-directml.bat
+set PYTHON=
+set GIT=
+set VENV_DIR=
+set COMMANDLINE_ARGS=--use-directml --update-check --update-all-extensions --reinstall-xformers --reinstall-torch
+
+call webui.bat

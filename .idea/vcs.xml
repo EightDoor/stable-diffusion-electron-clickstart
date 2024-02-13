@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/stable-diffusion-electron" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webui-directml" vcs="Git" />
   </component>
 </project>
