@@ -5,7 +5,333 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdc42073-1c59-4354-a7cd-7f819c08dc31" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run-directml.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run-directml.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/.eslintignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/.git-blame-ignore-revs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/.pylintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/CITATION.cff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/CODEOWNERS" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/alt-diffusion-inference.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/alt-diffusion-m18-inference.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/instruct-pix2pix.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sd/text_encoder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sd/unet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sd/vae_decoder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sd/vae_encoder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sdxl/text_encoder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sdxl/text_encoder_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sdxl/unet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sdxl/vae_decoder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/olive/sdxl/vae_encoder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/v1-inference.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/configs/v1-inpainting-inference.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/environment-wsl2.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/LDSR/ldsr_model_arch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/LDSR/preload.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/LDSR/scripts/ldsr_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/LDSR/sd_hijack_autoencoder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/LDSR/sd_hijack_ddpm_v1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/LDSR/vqvae_quantize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/extra_networks_lora.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/lora.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/lora_logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/lora_patches.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/lyco_helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network_full.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network_glora.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network_hada.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network_ia3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network_lokr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network_lora.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network_norm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/network_oft.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/networks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/preload.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/scripts/lora_script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/ui_edit_user_metadata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/Lora/ui_extra_networks_lora.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/ScuNET/preload.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/ScuNET/scripts/scunet_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/ScuNET/scunet_model_arch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/SwinIR/preload.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/SwinIR/scripts/swinir_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/SwinIR/swinir_model_arch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/SwinIR/swinir_model_arch_v2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/canvas-zoom-and-pan/javascript/zoom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/canvas-zoom-and-pan/scripts/hotkey_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/canvas-zoom-and-pan/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/extra-options-section/scripts/extra_options_section.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/hypertile/hypertile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/hypertile/scripts/hypertile_script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/hypertile/scripts/hypertile_xyz.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/mobile/javascript/mobile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/extensions-builtin/prompt-bracket-checker/javascript/prompt-bracket-checker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/html/card-no-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/html/extra-networks-card.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/html/extra-networks-no-cards.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/html/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/html/licenses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/aspectRatioOverlay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/contextMenus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/dragdrop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/edit-attention.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/edit-order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/extraNetworks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/generationParams.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/hints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/hires_fix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/imageMaskFix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/imageviewer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/imageviewerGamepad.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/inputAccordion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/localStorage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/localization.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/notification.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/profilerVisualization.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/progressbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/resizeHandle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/settings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/textualInversion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/token-counters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/javascript/ui_settings_hints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/launch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/localizations/Put localization files here.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/Roboto-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/api/api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/api/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/cache.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/call_queue.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/cmd_args.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/codeformer/codeformer_arch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/codeformer/vqgan_arch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/codeformer_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/config_states.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/deepbooru.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/deepbooru_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/devices.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/Generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/amp/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/amp/autocast_mode.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/backend.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/device.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/device_properties.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/hijack/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/hijack/diffusers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/hijack/kdiffusion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/hijack/realesrgan_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/hijack/stablediffusion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/hijack/torch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/hijack/transformers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/hijack/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/memory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/memory_amd/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/memory_amd/driver/atiadlxx.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/memory_amd/driver/atiadlxx_apis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/memory_amd/driver/atiadlxx_defines.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/memory_amd/driver/atiadlxx_structures.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/pdh/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/pdh/apis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/pdh/defines.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/pdh/errors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/pdh/msvcrt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/pdh/structures.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/dml/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/errors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/esrgan_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/esrgan_model_arch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/extensions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/extra_networks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/extra_networks_hypernet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/extras.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/face_restoration.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/fifo_lock.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/generation_parameters_copypaste.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/gfpgan_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/gitpython_hack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/gradio_extensons.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/hashes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/hypernetworks/hypernetwork.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/hypernetworks/ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/images.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/img2img.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/import_hook.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/initialize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/initialize_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/interrogate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/launch_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/localization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/logging_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/lowvram.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/mac_specific.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/masking.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/memmon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/modelloader.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/models/diffusion/ddpm_edit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/models/diffusion/uni_pc/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/models/diffusion/uni_pc/sampler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/models/diffusion/uni_pc/uni_pc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ngrok.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/olive_script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/execution_providers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/pipelines/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/pipelines/onnx_stable_diffusion_img2img_pipeline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/pipelines/onnx_stable_diffusion_inpaint_pipeline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/pipelines/onnx_stable_diffusion_pipeline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/pipelines/onnx_stable_diffusion_upscale_pipeline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/pipelines/onnx_stable_diffusion_xl_img2img_pipeline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/pipelines/onnx_stable_diffusion_xl_pipeline.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/pipelines/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/onnx_impl/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/patches.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/paths.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/paths_internal.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/postprocessing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/processing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/processing_scripts/refiner.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/processing_scripts/seed.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/progress.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/prompt_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/realesrgan_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/restart.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/rng.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/rng_philox.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/safe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/script_callbacks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/script_loading.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/scripts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/scripts_auto_postprocessing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/scripts_postprocessing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_disable_initialization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_checkpoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_clip.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_clip_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_ip2p.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_open_clip.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_optimizations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_unet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_hijack_xlmr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_models_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_models_types.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_models_xl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers_cfg_denoiser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers_common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers_compvis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers_diffusers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers_extra.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers_kdiffusion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers_timesteps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_samplers_timesteps_impl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_unet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_vae.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_vae_approx.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sd_vae_taesd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/shared.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/shared_cmd_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/shared_gradio_themes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/shared_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/shared_items.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/shared_options.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/shared_state.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/shared_total_tqdm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/styles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sub_quadratic_attention.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/sysinfo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/textual_inversion/autocrop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/textual_inversion/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/textual_inversion/image_embedding.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/textual_inversion/learn_schedule.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/textual_inversion/logging.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/textual_inversion/test_embedding.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/textual_inversion/textual_inversion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/textual_inversion/ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/timer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/txt2img.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_checkpoint_merger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_common.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_components.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_extensions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_extra_networks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_extra_networks_checkpoints.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_extra_networks_checkpoints_user_metadata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_extra_networks_hypernets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_extra_networks_textual_inversion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_extra_networks_user_metadata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_gradio_extensions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_loadsave.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_postprocessing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_prompt_styles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_tempdir.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/ui_toprow.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/upscaler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/xlmr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/xlmr_m18.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/modules/xpu_specific.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/pyproject.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/requirements-test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/requirements_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/custom_code.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/img2imgalt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/loopback.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/outpainting_mk_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/poor_mans_outpainting.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/postprocessing_caption.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/postprocessing_codeformer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/postprocessing_create_flipped_copies.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/postprocessing_focal_crop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/postprocessing_gfpgan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/postprocessing_split_oversized.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/postprocessing_upscale.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/processing_autosized_crop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/prompt_matrix.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/prompts_from_file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/sd_upscale.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/scripts/xyz_grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/conftest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/test_extras.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/test_files/empty.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/test_files/img2img_basic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/test_files/mask_basic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/test_img2img.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/test_txt2img.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/test/test_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/textual_inversion_templates/hypernetwork.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/textual_inversion_templates/none.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/textual_inversion_templates/style.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/textual_inversion_templates/style_filewords.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/textual_inversion_templates/subject.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/textual_inversion_templates/subject_filewords.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/webui-macos-env.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/webui.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/webui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webui/webui.sh" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +357,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "ignore_missing_gitignore": "true",
     "javascript.nodejs.core.library.configured.version": "18.17.1",
     "javascript.nodejs.core.library.typings.version": "18.17.19",
-    "last_opened_file_path": "D:/project/my-project/stable-diffusion-all",
+    "last_opened_file_path": "D:/project/my-project/stable-diffusion-all/webui",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -42,6 +369,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\my-project\stable-diffusion-all\webui" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="Y" />
@@ -56,7 +388,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707816563744</updated>
       <workItem from="1707816564870" duration="1920000" />
-      <workItem from="1707818868136" duration="2808000" />
+      <workItem from="1707818868136" duration="5465000" />
     </task>
     <servers />
   </component>
