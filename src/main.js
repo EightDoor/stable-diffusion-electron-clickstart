@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, Menu} = require('electron');
 const path = require('path');
 const log = require("electron-log/main")
 
@@ -11,6 +11,9 @@ if (require('electron-squirrel-startup')) {
 // log.info("test 测试数据")
 // log.error("测试错误")
 const createWindow = () => {
+    // 取消顶部栏
+    Menu.setApplicationMenu(null)
+
     // Create the browser window.
     const mainWindow = new BrowserWindow({
         width: 800,

@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/renderer/components/NotFound.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/layout/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/App.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,20 +52,20 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "master",
-    "javascript.nodejs.core.library.configured.version": "18.14.0",
+    "javascript.nodejs.core.library.configured.version": "18.17.1",
     "javascript.nodejs.core.library.typings.version": "",
-    "last_opened_file_path": "/home/zhoukai/my-project/stable-diffusion-electron",
+    "last_opened_file_path": "D:/project/my-project/stable-diffusion-electron",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/home/zhoukai/.nvm/versions/node/v18.14.0/bin/node",
+    "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "yarn",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "/home/zhoukai/.local/share/JetBrains/Toolbox/apps/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "C:\\Users\\zhoukai\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,6 +85,7 @@
       <workItem from="1707795892682" duration="4685000" />
       <workItem from="1707807837423" duration="33000" />
       <workItem from="1707807878583" duration="1985000" />
+      <workItem from="1707811930435" duration="2009000" />
     </task>
     <servers />
   </component>

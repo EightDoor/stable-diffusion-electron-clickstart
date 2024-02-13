@@ -42,6 +42,7 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "element-plus": "^2.5.5",
-    "vue": "^3.4.18"
+    "vue": "^3.4.18",
+    "vue-router": "^4.2.5"
   }
 }
