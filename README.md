@@ -19,3 +19,5 @@ set PIP_INSTALLER_LOCATION=...：设置PIP_INSTALLER_LOCATION环境变量，指�
 
 set TRANSFORMERS_CACHE=...：设置TRANSFORMERS_CACHE环境变量，作为transformers库（一个常用的NLP库）的缓存目录，通常用于存储预训练模型等大文件，以提高数据加载速度并减少网络传输压力。
 ```
+- run.bat
+  - 启动脚本
