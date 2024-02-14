@@ -7,7 +7,6 @@
     <list default="true" id="bdc42073-1c59-4354-a7cd-7f819c08dc31" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run-directml.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run-directml.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +41,16 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\zhoukai\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\my-project\stable-diffusion-all\webui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\my-project\stable-diffusion-all\stable-diffusion-electron\src\main" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -65,6 +68,8 @@
       <updated>1707816563744</updated>
       <workItem from="1707816564870" duration="1920000" />
       <workItem from="1707818868136" duration="9598000" />
+      <workItem from="1707908370433" duration="464000" />
+      <workItem from="1707915435420" duration="4893000" />
     </task>
     <servers />
   </component>
