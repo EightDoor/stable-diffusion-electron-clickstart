@@ -97,7 +97,7 @@
     <el-button v-if="startBtnStatus" :disabled="!startBtnStatus" size="large" type="success" @click="oneClickStart">
       一键启动
     </el-button>
-    <el-button v-if="!startBtnStatus" size="large" type="danger" @click="oneClickClose">关闭</el-button>
+    <el-button v-if="!startBtnStatus" size="large" type="danger" @click="oneClickClose">停止</el-button>
   </div>
 </template>
 
@@ -157,9 +157,15 @@ async function oneClickClose() {
   const result = await IpcRenderer.oneClickClose();
   if (result) {
     startBtnStatus.value = true;
-    ElMessage.success("关闭成功")
+    ElMessage({
+      message: "关闭成功",
+      type: "success"
+    })
   } else {
-    ElMessage.error("关闭失败，请重试")
+    ElMessage({
+      message: "关闭失败，请重试",
+      type: "error"
+    })
   }
   logger.info(result, '终止结果')
 }

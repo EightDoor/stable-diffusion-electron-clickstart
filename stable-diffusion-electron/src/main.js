@@ -126,6 +126,8 @@ function openExternalUrl(event, url) {
     shell.openExternal(url)
 }
 
+// TODO  现在只能是一个命令，  需要做一个Map 存储  适用于打开其他的命令
+// TODO 不然kill的时候 只能是关闭最后一个
 let childSProcessStable;
 
 
@@ -143,7 +145,11 @@ function oneClickClose() {
  * 一键启动 stable diffusion
  */
 function oneClickStart(event) {
-    executeProcessChild("../../../run-directml.bat", mainToRendererStable)
+    const cwdPath = path.join(__dirname, "../../..")
+    const pathUrl = "../../../run-directml.bat"
+    executeProcessChild(pathUrl, mainToRendererStable, [], {
+        cwd: cwdPath,
+    })
 }
 
 
