@@ -17,11 +17,20 @@
       </el-menu-item>
     </el-menu>
     <div class="content">
-      <router-view></router-view>
+      <router-view v-slot="{Component}">
+        <keep-alive :include="cacheList">
+          <component :is="Component"/>
+        </keep-alive>
+      </router-view>
+      <!--      <router-view></router-view>-->
     </div>
   </div>
+  <Footer/>
 </template>
 <script setup>
+import Footer from "@/components/Footer.vue";
+
+const cacheList = ["home"]
 const list = [
   {
     title: "首页",

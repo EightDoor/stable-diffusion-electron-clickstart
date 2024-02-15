@@ -1,4 +1,3 @@
-const {ipcRenderer} = require("electron/renderer")
 
 /**
  * 渲染进程

@@ -3,22 +3,25 @@ import log from 'electron-log/renderer';
 // log.transports.console.level = false
 // 有六个日志级别error, warn, info, verbose, debug, silly。默认是silly
 export default {
-    info(param) {
-        log.info(param)
+    info(param, title) {
+        log.info(this._comm(param, title, 'info'))
     },
-    warn(param) {
-        log.warn(param)
+    warn(param, title) {
+        log.warn(this._comm(param, title, 'warn'))
     },
-    error(param) {
-        log.error(param)
+    error(param, title) {
+        log.error(this._comm(param, title, 'error'))
     },
-    debug(param) {
-        log.debug(param)
+    debug(param, title) {
+        log.debug(this._comm(param, title, 'debug'))
     },
-    verbose(param) {
-        log.verbose(param)
+    verbose(param, title) {
+        log.verbose(this._comm(param, title, 'verbose'))
     },
-    silly(param) {
-        log.silly(param)
+    silly(param, title) {
+        log.silly(this._comm(param, title, 'silly'))
+    },
+    _comm(param, title, type) {
+        return {title: title ?? type, data: param}
     }
 }

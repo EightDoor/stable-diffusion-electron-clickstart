@@ -1,6 +1,8 @@
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow, Menu, ipcMain, shell, utilityProcess} = require('electron');
 const path = require('path');
+const os = require("node:os")
 const log = require("electron-log/main")
+const systeminfo = require("systeminformation")
 
 log.initialize()
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -13,7 +15,7 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
     // 取消顶部栏
     Menu.setApplicationMenu(null)
-
+    icpListenInit()
     // Create the browser window.
     const mainWindow = new BrowserWindow({
         // width: 800,
@@ -61,3 +63,77 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+
+
+/**
+ * 监听ipc信息
+ */
+const icpListenInit = () => {
+    ipcMain.handle("getDeviceInfo", getDeviceInfo)
+    ipcMain.once("openExternalUrl", openExternalUrl)
+    ipcMain.handle("oneClickStart", oneClickStart)
+}
+
+function getFileSize(size) {//把字节转换成正常文件大小
+    if (!size) return "";
+    const num = 1024.00; //byte
+    if (size < num)
+        return size + "B";
+    if (size < Math.pow(num, 2))
+        return (size / num).toFixed(2) + "KB"; //kb
+    if (size < Math.pow(num, 3))
+        return (size / Math.pow(num, 2)).toFixed(2) + "MB"; //M
+    if (size < Math.pow(num, 4))
+        return (size / Math.pow(num, 3)).toFixed(2) + "G"; //G
+    return (size / Math.pow(num, 4)).toFixed(2) + "T"; //T
+}
+
+function jsonEncode(val) {
+    return JSON.stringify(val)
+}
+
+/**
+ * 获取设备信息
+ */
+function getDeviceInfo(event) {
+    return new Promise(async (resolve, reject) => {
+        const cpu = await systeminfo.cpu();
+        const mem = await systeminfo.mem()
+        const graphics = await systeminfo.graphics()
+        const osInfo = await systeminfo.osInfo()
+        // const users = await systeminfo.users()
+
+        const result = {
+            cpu: cpu,
+            mem: mem,
+            graphics: graphics,
+            osInfo: osInfo,
+            // users: users
+        }
+        resolve(jsonEncode(result))
+    })
+}
+
+/**
+ * 打开地址
+ */
+function openExternalUrl(event, url) {
+    console.log(event)
+    console.log(url)
+    shell.openExternal(url)
+}
+
+/**
+ * 一键启动 stable diffusion
+ */
+async function oneClickStart() {
+    const processStartPath = path.join(__dirname, "../../../run-directml.bat")
+    log.debug(processStartPath, 'processStartPath')
+    const child = utilityProcess.fork(processStartPath, '', {
+        stdio: 'pipe',
+        serviceName: "启动stable-diffusion"
+    })
+    child.on("message", e => {
+        log.debug(e.data)
+    })
+}

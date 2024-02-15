@@ -15,19 +15,23 @@ const routes = [
         children: [
             {
                 path: "home",
-                component: Home
+                component: Home,
+                name: "home"
             },
             {
                 path: "model",
-                component: Model
+                component: Model,
+                name: "model"
             },
             {
                 path: "communicationGroups",
-                component: CommunicationGroups
+                component: CommunicationGroups,
+                name: "communicationGroups"
             },
             {
                 path: "about",
-                component: About
+                component: About,
+                name: "about"
             },
         ]
     },
