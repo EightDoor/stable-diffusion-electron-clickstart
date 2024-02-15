@@ -1,3 +1,5 @@
+chcp 65001
+
 @echo off
 
 call environment.bat

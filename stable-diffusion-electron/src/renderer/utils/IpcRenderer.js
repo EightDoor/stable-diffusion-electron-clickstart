@@ -19,9 +19,19 @@ const IpcRenderer = {
      * 一键启动
      * @returns {Promise<void>}
      */
-    async oneClickStart() {
-        return window.electronApI.oneClickStart();
-    }
+    oneClickStart() {
+        window.electronApI.oneClickStart();
+    },
+    async oneClickClose() {
+        return window.electronApI.oneClickClose();
+    },
+    /**
+     * 更新终端数据
+     * @param callback
+     */
+    updateStableDiffusionChildVal(callback) {
+        window.electronApI.updateStableDiffusionChildVal(callback)
+    },
 }
 
 export default IpcRenderer;

@@ -2,7 +2,7 @@
   <div class="home-title">
     {{ Config.homeTitle }}
   </div>
-  <div class="home-container">
+  <div v-if="startBtnStatus" class="home-container">
     <div class="title">支持平台</div>
     <el-divider></el-divider>
     <ul class="platform-ui">
@@ -89,8 +89,15 @@
       </div>
     </div>
   </div>
+
+  <div v-if="!startBtnStatus">
+    <Terminal ref="termialRef"/>
+  </div>
   <div class="action">
-    <el-button size="large" type="success" @click="oneClickStart">一键启动</el-button>
+    <el-button v-if="startBtnStatus" :disabled="!startBtnStatus" size="large" type="success" @click="oneClickStart">
+      一键启动
+    </el-button>
+    <el-button v-if="!startBtnStatus" size="large" type="danger" @click="oneClickClose">关闭</el-button>
   </div>
 </template>
 
@@ -98,13 +105,17 @@
 <script setup>
 import {onMounted, ref} from 'vue';
 import IpcRenderer from "@/utils/IpcRenderer";
+import ipcRenderer from "@/utils/IpcRenderer";
 import logger from "@/utils/logger";
 import Utils from "@/utils";
 import Config from "@/config";
 import {Refresh} from "@element-plus/icons-vue"
+import Terminal from "@/views/terminal.vue";
+import {ElMessage} from "element-plus";
 
 onMounted(() => {
   getDeviceInfo();
+  updateStableDiffusionChildVal();
 })
 
 const loading = ref(false)
@@ -133,10 +144,41 @@ const platformList = [
   }
 ]
 
-async function oneClickStart() {
-  const result = await IpcRenderer.oneClickStart();
-  logger.info(result, '一键启动结果')
+
+const startBtnStatus = ref(true);
+const termialRef = ref();
+
+
+function oneClickStart() {
+  IpcRenderer.oneClickStart();
 }
+
+async function oneClickClose() {
+  const result = await IpcRenderer.oneClickClose();
+  if (result) {
+    startBtnStatus.value = true;
+    ElMessage.success("关闭成功")
+  } else {
+    ElMessage.error("关闭失败，请重试")
+  }
+  logger.info(result, '终止结果')
+}
+
+function updateStableDiffusionChildVal() {
+  ipcRenderer.updateStableDiffusionChildVal((msg) => {
+    const result = Utils.jsonDeCode(msg);
+    logger.info(result, 'msg')
+    startBtnStatus.value = false;
+    if (result.type === 'error') {
+      termialRef.value.addItem(result)
+    } else if (result.type === 'close') {
+      startBtnStatus.value = true;
+    } else if (result.type === 'msg') {
+      termialRef.value.addItem(result)
+    }
+  })
+}
+
 </script>
 
 <style lang="scss" scoped>

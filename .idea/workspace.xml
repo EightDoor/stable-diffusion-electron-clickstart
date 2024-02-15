@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bdc42073-1c59-4354-a7cd-7f819c08dc31" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run-directml.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run-directml.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +18,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/webui-directml" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -77,7 +79,7 @@
       <workItem from="1707816564870" duration="1920000" />
       <workItem from="1707818868136" duration="9598000" />
       <workItem from="1707908370433" duration="464000" />
-      <workItem from="1707915435420" duration="20846000" />
+      <workItem from="1707915435420" duration="29331000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 const {app, BrowserWindow, Menu, ipcMain, shell, utilityProcess} = require('electron');
 const path = require('path');
-const os = require("node:os")
+const child_process = require("node:child_process")
 const log = require("electron-log/main")
 const systeminfo = require("systeminformation")
 
@@ -10,6 +10,8 @@ if (require('electron-squirrel-startup')) {
     app.quit();
 }
 
+let mainWindow;
+
 // log.info("test 测试数据")
 // log.error("测试错误")
 const createWindow = () => {
@@ -17,7 +19,7 @@ const createWindow = () => {
     Menu.setApplicationMenu(null)
     icpListenInit()
     // Create the browser window.
-    const mainWindow = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         // width: 800,
         // height: 600,
         width: 1000,
@@ -71,7 +73,8 @@ app.on('activate', () => {
 const icpListenInit = () => {
     ipcMain.handle("getDeviceInfo", getDeviceInfo)
     ipcMain.once("openExternalUrl", openExternalUrl)
-    ipcMain.handle("oneClickStart", oneClickStart)
+    ipcMain.once("oneClickStart", oneClickStart)
+    ipcMain.handle("oneClickClose", oneClickClose)
 }
 
 function getFileSize(size) {//把字节转换成正常文件大小
@@ -123,17 +126,82 @@ function openExternalUrl(event, url) {
     shell.openExternal(url)
 }
 
+let childSProcessStable;
+
+
+/**
+ * 关闭启动的终端
+ */
+function oneClickClose() {
+    if (childSProcessStable) {
+        return childSProcessStable.kill();
+    }
+    return false;
+}
+
 /**
  * 一键启动 stable diffusion
  */
-async function oneClickStart() {
-    const processStartPath = path.join(__dirname, "../../../run-directml.bat")
+function oneClickStart(event) {
+    executeProcessChild("../../../run-directml.bat", mainToRendererStable)
+}
+
+
+/**
+ * 执行命令
+ * @param path
+ * @param sendMsgFun
+ * @param args
+ * @param options
+ * @returns {Promise<unknown>}
+ */
+function executeProcessChild(path, sendMsgFun, args = [], options = {}) {
+    const result = {
+        type: '',
+        data: ''
+    }
+    const processStartPath = path.join(__dirname, path)
     log.debug(processStartPath, 'processStartPath')
-    const child = utilityProcess.fork(processStartPath, '', {
-        stdio: 'pipe',
-        serviceName: "启动stable-diffusion"
-    })
-    child.on("message", e => {
-        log.debug(e.data)
-    })
+    childSProcessStable = child_process.spawn(processStartPath, args, options)
+    childSProcessStable.on('spawn', (code) => {
+        log.debug('进程生成成功 spawn')
+        // result.type = 'spawn'
+        // result.data = code
+        // log.info(code)
+        // mainToRendererStable(result);
+    });
+    childSProcessStable.stdout.on('data', (data) => {
+        result.type = 'msg';
+        result.data = bufferToTxt(data)
+        sendMsgFun(result)
+    });
+
+    childSProcessStable.stderr.on('data', (data) => {
+        result.type = 'error';
+        result.data = bufferToTxt(data)
+        sendMsgFun(result)
+    });
+
+    childSProcessStable.on('close', (code) => {
+        log.debug('进程退出 exit')
+        result.type = 'close'
+        result.data = code
+        sendMsgFun(result)
+    });
+}
+
+function mainToRendererStable(value) {
+    mainToRenderer('update-stable-diffusion-child', value)
+}
+
+
+/**
+ * 主进程向子进程发送数据
+ */
+function mainToRenderer(type, value) {
+    mainWindow.webContents.send(type, jsonEncode(value))
+}
+
+function bufferToTxt(buffer) {
+    return buffer.toString('utf-8');
 }
