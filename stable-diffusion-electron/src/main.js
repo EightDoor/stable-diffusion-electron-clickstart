@@ -72,8 +72,8 @@ app.on('activate', () => {
  */
 const icpListenInit = () => {
     ipcMain.handle("getDeviceInfo", getDeviceInfo)
-    ipcMain.once("openExternalUrl", openExternalUrl)
-    ipcMain.once("oneClickStart", oneClickStart)
+    ipcMain.on("openExternalUrl", openExternalUrl)
+    ipcMain.on("oneClickStart", oneClickStart)
     ipcMain.handle("oneClickClose", oneClickClose)
 }
 
@@ -149,18 +149,18 @@ function oneClickStart(event) {
 
 /**
  * 执行命令
- * @param path
+ * @param pathUrl
  * @param sendMsgFun
  * @param args
  * @param options
  * @returns {Promise<unknown>}
  */
-function executeProcessChild(path, sendMsgFun, args = [], options = {}) {
+function executeProcessChild(pathUrl, sendMsgFun, args = [], options = {}) {
     const result = {
         type: '',
         data: ''
     }
-    const processStartPath = path.join(__dirname, path)
+    const processStartPath = path.join(__dirname, pathUrl)
     log.debug(processStartPath, 'processStartPath')
     childSProcessStable = child_process.spawn(processStartPath, args, options)
     childSProcessStable.on('spawn', (code) => {

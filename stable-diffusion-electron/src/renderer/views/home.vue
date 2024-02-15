@@ -183,6 +183,7 @@ function updateStableDiffusionChildVal() {
 
 <style lang="scss" scoped>
 .home-title {
+  height: 50px;
   text-align: center;
   font-size: 30px;
   margin-bottom: 30px;
