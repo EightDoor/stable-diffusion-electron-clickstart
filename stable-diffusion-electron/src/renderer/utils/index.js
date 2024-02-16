@@ -1,3 +1,5 @@
+import {dayjs} from "element-plus";
+
 const Utils = {
     jsonDeCode(val) {
         return JSON.parse(val)
@@ -17,6 +19,15 @@ const Utils = {
     },
     vRam(val) {
         return Math.round(val / 1024)
+    },
+    /**
+     * 格式化时间
+     * @param val
+     * @param type
+     * @returns {*}
+     */
+    formatTime(val = Date.now(), type = "YYYY-MM-DD HH:mm:ss") {
+        return dayjs(val).format(type)
     }
 }
 

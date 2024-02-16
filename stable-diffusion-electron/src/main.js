@@ -1,5 +1,6 @@
 const {app, BrowserWindow, Menu, ipcMain, shell, utilityProcess} = require('electron');
 const path = require('path');
+const fs = require("node:fs/promises")
 const child_process = require("node:child_process")
 const log = require("electron-log/main")
 const systeminfo = require("systeminformation")
@@ -75,6 +76,8 @@ const icpListenInit = () => {
     ipcMain.on("openExternalUrl", openExternalUrl)
     ipcMain.on("oneClickStart", oneClickStart)
     ipcMain.handle("oneClickClose", oneClickClose)
+    ipcMain.handle("getFolderFiles", getFolderFiles)
+    ipcMain.on("openFolder", openFolder)
 }
 
 function getFileSize(size) {//把字节转换成正常文件大小
@@ -117,6 +120,8 @@ function getDeviceInfo(event) {
     })
 }
 
+const projectBasePath = path.join(__dirname, "../../../")
+
 /**
  * 打开地址
  */
@@ -126,17 +131,62 @@ function openExternalUrl(event, url) {
     shell.openExternal(url)
 }
 
+
+/**
+ * 获取文件夹文件列表
+ */
+function getFolderFiles(event, folder) {
+    return new Promise((resolve, reject) => {
+        console.log(projectBasePath, 'projectBasePath')
+        console.log(folder, 'folder')
+
+        const folderPath = path.join(projectBasePath, folder)
+        console.log(folderPath, 'folderPath')
+        fs.readdir(folderPath, {
+            recursive: false,  // 不需要读取目录内容 递归
+        }).then(async (files) => {
+            const list = []
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const filePath = path.join(folderPath, file);
+                const stat = await fs.stat(filePath)
+                const fileType = stat.isFile() ? "文件" : stat.isDirectory() ? '文件夹' : '未知'
+                const obj = {
+                    size: stat.size,
+                    name: file,
+                    fileType,
+                    path: filePath,
+                    createTime: stat.birthtime,
+                    updateTime: stat.mtime,
+                }
+                list.push(obj)
+            }
+            resolve(jsonEncode(list))
+        }).catch(err => {
+            reject(jsonEncode(err));
+        })
+    })
+}
+
+function openFolder(event, folderPath) {
+    const fullPath = path.join(projectBasePath, folderPath);
+    shell.openPath(fullPath)
+}
+
 // TODO  现在只能是一个命令，  需要做一个Map 存储  适用于打开其他的命令
 // TODO 不然kill的时候 只能是关闭最后一个
-let childSProcessStable;
-
+let childSProcessStable = null;
 
 /**
  * 关闭启动的终端
  */
 function oneClickClose() {
     if (childSProcessStable) {
-        return childSProcessStable.kill();
+        const result = childSProcessStable.kill("SIGINT");
+        if (result) {
+            childSProcessStable = null;
+        }
+        return result;
     }
     return false;
 }
@@ -145,13 +195,20 @@ function oneClickClose() {
  * 一键启动 stable diffusion
  */
 function oneClickStart(event) {
-    const cwdPath = path.join(__dirname, "../../..")
-    const pathUrl = "../../../run-directml.bat"
-    executeProcessChild(pathUrl, mainToRendererStable, [], {
-        cwd: cwdPath,
+    const pathUrl = path.join(projectBasePath, "run-directml.bat")
+    // executeProcessChild(pathUrl, mainToRendererStable, [], {
+    //     cwd: cwdPath,
+    // })
+    executeProcessChildTwo(path.join(__dirname, pathUrl), [], {
+        cwd: projectBasePath,
+        detached: true,
     })
 }
 
+
+function executeProcessChildTwo(pathUrl, args, options) {
+    child_process.spawn(pathUrl, args, options)
+}
 
 /**
  * 执行命令
@@ -168,32 +225,42 @@ function executeProcessChild(pathUrl, sendMsgFun, args = [], options = {}) {
     }
     const processStartPath = path.join(__dirname, pathUrl)
     log.debug(processStartPath, 'processStartPath')
-    childSProcessStable = child_process.spawn(processStartPath, args, options)
-    childSProcessStable.on('spawn', (code) => {
-        log.debug('进程生成成功 spawn')
-        // result.type = 'spawn'
-        // result.data = code
-        // log.info(code)
-        // mainToRendererStable(result);
-    });
-    childSProcessStable.stdout.on('data', (data) => {
-        result.type = 'msg';
-        result.data = bufferToTxt(data)
-        sendMsgFun(result)
-    });
+    if (!childSProcessStable) {
+        childSProcessStable = child_process.spawn(processStartPath, args, options)
+        childSProcessStable.on('spawn', (code) => {
+            log.debug('进程生成成功 spawn')
+            // result.type = 'spawn'
+            // result.data = code
+            // log.info(code)
+            // mainToRendererStable(result);
+        });
+        childSProcessStable.stdout.on('data', (data) => {
+            result.type = 'msg';
+            result.data = bufferToTxt(data)
+            sendMsgFun(result)
+        });
 
-    childSProcessStable.stderr.on('data', (data) => {
-        result.type = 'error';
-        result.data = bufferToTxt(data)
-        sendMsgFun(result)
-    });
+        childSProcessStable.stderr.on('data', (data) => {
+            result.type = 'error';
+            result.data = bufferToTxt(data)
+            sendMsgFun(result)
+        });
 
-    childSProcessStable.on('close', (code) => {
-        log.debug('进程退出 exit')
-        result.type = 'close'
-        result.data = code
-        sendMsgFun(result)
-    });
+        childSProcessStable.on('close', (code) => {
+            log.debug('进程退出 exit')
+            result.type = 'close'
+            result.data = code
+            sendMsgFun(result)
+        });
+        childSProcessStable.on('exit', (code) => {
+            log.debug('进程退出 exit')
+            result.type = 'exit'
+            result.data = code
+            sendMsgFun(result)
+        });
+    } else {
+        log.error("进程正在运行中!")
+    }
 }
 
 function mainToRendererStable(value) {

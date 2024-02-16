@@ -4,5 +4,12 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/stable-diffusion-electron" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/webui-directml" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webui-directml/extensions/sd-webui-controlnet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webui-directml/extensions/stable-diffusion-webui-localization-zh_CN" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webui-directml/repositories/BLIP" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webui-directml/repositories/CodeFormer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webui-directml/repositories/generative-models" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webui-directml/repositories/k-diffusion" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webui-directml/repositories/stable-diffusion-stability-ai" vcs="Git" />
   </component>
 </project>

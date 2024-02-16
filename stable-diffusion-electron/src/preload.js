@@ -8,5 +8,7 @@ contextBridge.exposeInMainWorld("electronApI", {
     openExternalUrl: (url) => ipcRenderer.send("openExternalUrl", url),
     oneClickStart: () => ipcRenderer.send("oneClickStart"),
     oneClickClose: () => ipcRenderer.invoke("oneClickClose"),
-    updateStableDiffusionChildVal: (callback) => ipcRenderer.on("update-stable-diffusion-child", (_event, value) => callback(value))
+    updateStableDiffusionChildVal: (callback) => ipcRenderer.on("update-stable-diffusion-child", (_event, value) => callback(value)),
+    getFolderFiles: (folderPath) => ipcRenderer.invoke("getFolderFiles", folderPath),
+    openFolder: (folderPath) => ipcRenderer.send("openFolder", folderPath)
 })

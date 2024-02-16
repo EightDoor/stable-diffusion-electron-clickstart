@@ -32,6 +32,21 @@ const IpcRenderer = {
     updateStableDiffusionChildVal(callback) {
         window.electronApI.updateStableDiffusionChildVal(callback)
     },
+    /**
+     * 获取文件夹文件列表
+     * @param folder
+     */
+    async getFolderFiles(folderPath) {
+        const result = await window.electronApI.getFolderFiles(folderPath);
+        return Utils.jsonDeCode(result)
+    },
+    /**
+     * 打开文件夹
+     * @param folderPath
+     */
+    openFolder(folderPath) {
+        window.electronApI.openFolder(folderPath);
+    }
 }
 
 export default IpcRenderer;

@@ -37,7 +37,7 @@ const list = [
     path: "/home"
   },
   {
-    title: "模型",
+    title: "文件夹",
     path: "/model"
   },
   {
