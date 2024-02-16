@@ -4,6 +4,9 @@ const fs = require("node:fs/promises")
 const child_process = require("node:child_process")
 const log = require("electron-log/main")
 const systeminfo = require("systeminformation")
+const {updateElectronApp} = require('update-electron-app');
+
+updateElectronApp();
 
 log.initialize()
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -210,7 +213,7 @@ function oneClickStart(event) {
     // executeProcessChild(pathUrl, mainToRendererStable, [], {
     //     cwd: cwdPath,
     // })
-    executeProcessChildTwo(path.join(__dirname, pathUrl), [], {
+    executeProcessChildTwo(pathUrl, [], {
         cwd: projectBasePath,
         detached: true,
     })

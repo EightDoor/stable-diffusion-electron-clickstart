@@ -1,5 +1,5 @@
 <template>
-  <el-descriptions title="QQ群">
+  <el-descriptions border title="QQ群">
     <el-descriptions-item label="群号码">{{ qqInfo.groupId }}
       <el-button bg size="small" style="margin-left: 15px" text type="primary" @click="copyGroupId(qqInfo.groupId)">
         复制

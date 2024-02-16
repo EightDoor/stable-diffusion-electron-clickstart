@@ -40,10 +40,10 @@ const list = [
     title: "文件夹",
     path: "/model"
   },
-  {
-    title: "交流群",
-    path: "/communicationGroups"
-  },
+  // {
+  //   title: "交流群",
+  //   path: "/communicationGroups"
+  // },
   {
     title: "关于",
     path: "/about"
