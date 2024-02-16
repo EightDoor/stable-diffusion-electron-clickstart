@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu, ipcMain, shell, utilityProcess} = require('electron');
+const {app, BrowserWindow, Menu, ipcMain, shell, utilityProcess, clipboard} = require('electron');
 const path = require('path');
 const fs = require("node:fs/promises")
 const child_process = require("node:child_process")
@@ -78,6 +78,7 @@ const icpListenInit = () => {
     ipcMain.handle("oneClickClose", oneClickClose)
     ipcMain.handle("getFolderFiles", getFolderFiles)
     ipcMain.on("openFolder", openFolder)
+    ipcMain.on("clipboardWriteText", clipboardWriteText)
 }
 
 function getFileSize(size) {//把字节转换成正常文件大小
@@ -97,6 +98,7 @@ function getFileSize(size) {//把字节转换成正常文件大小
 function jsonEncode(val) {
     return JSON.stringify(val)
 }
+
 
 /**
  * 获取设备信息
@@ -129,6 +131,15 @@ function openExternalUrl(event, url) {
     console.log(event)
     console.log(url)
     shell.openExternal(url)
+}
+
+/**
+ * 写入剪切板文本
+ * @param event
+ * @param text
+ */
+function clipboardWriteText(event, text) {
+    clipboard.writeText(text)
 }
 
 

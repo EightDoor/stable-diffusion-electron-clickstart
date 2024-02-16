@@ -10,5 +10,6 @@ contextBridge.exposeInMainWorld("electronApI", {
     oneClickClose: () => ipcRenderer.invoke("oneClickClose"),
     updateStableDiffusionChildVal: (callback) => ipcRenderer.on("update-stable-diffusion-child", (_event, value) => callback(value)),
     getFolderFiles: (folderPath) => ipcRenderer.invoke("getFolderFiles", folderPath),
-    openFolder: (folderPath) => ipcRenderer.send("openFolder", folderPath)
+    openFolder: (folderPath) => ipcRenderer.send("openFolder", folderPath),
+    clipboardWriteText: (text) => ipcRenderer.send("clipboardWriteText", text)
 })

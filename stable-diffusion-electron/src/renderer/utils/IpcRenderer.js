@@ -46,6 +46,12 @@ const IpcRenderer = {
      */
     openFolder(folderPath) {
         window.electronApI.openFolder(folderPath);
+    },
+    /**
+     * 复制内容
+     */
+    clipboardWriteText(text) {
+        window.electronApI.clipboardWriteText(text);
     }
 }
 
