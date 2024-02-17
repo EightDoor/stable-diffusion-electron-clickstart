@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/images/header-banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/stores/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/utils/Constant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/folder/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.yarn/install-state.gz" beforeDir="false" afterPath="$PROJECT_DIR$/.yarn/install-state.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/language/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/language/en-US.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/language/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/language/zh-CN.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/layout/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -54,8 +60,8 @@
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "master",
     "javascript.nodejs.core.library.configured.version": "20.11.1",
-    "javascript.nodejs.core.library.typings.version": "",
-    "last_opened_file_path": "F:/project/my-project/stable-diffusion-all/stable-diffusion-electron",
+    "javascript.nodejs.core.library.typings.version": "20.11.19",
+    "last_opened_file_path": "F:/project/my-project/stable-diffusion-all/stable-diffusion-electron/src/renderer/assets/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -65,13 +71,14 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "yarn",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preference.i18nPlugin",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Users\\zhoukai\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\project\my-project\stable-diffusion-all\stable-diffusion-electron\src\renderer\assets\images" />
       <recent name="D:\project\my-project\stable-diffusion-electron\src\renderer\views\about" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -93,6 +100,15 @@
       <workItem from="1708163693216" duration="95000" />
       <workItem from="1708163874831" duration="106000" />
       <workItem from="1708164125777" duration="966000" />
+      <workItem from="1708168288445" duration="606000" />
+      <workItem from="1708171690115" duration="249000" />
+      <workItem from="1708171949787" duration="24000" />
+      <workItem from="1708171987694" duration="8000" />
+      <workItem from="1708172077663" duration="9000" />
+      <workItem from="1708172113187" duration="18000" />
+      <workItem from="1708172141048" duration="93000" />
+      <workItem from="1708172246939" duration="62000" />
+      <workItem from="1708172321110" duration="7599000" />
     </task>
     <servers />
   </component>

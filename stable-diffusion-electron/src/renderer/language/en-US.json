@@ -1,7 +1,13 @@
 {
   "home": {
-    "title": "test",
+    "title": "Stable Diffusion WebUI",
+    "title1": "Artistic Navigator - Launcher",
+    "desc": "Let AI work with you to create, let the brushes be as they please!",
     "supportingPlatforms": "supportingPlatforms",
-    "graphicsCard": "graphicsCard"
+    "graphicsCard": "graphicsCard",
+    "notice": "Notice",
+    "notice1": "This launcher is provided for free. If you pay through other channels or this software, please refund immediately and file a complaint with the corresponding merchant.",
+    "notice2": "The only release location for this launcher is at Programming_by_LeCodeRen @bilibilibili (UID 392881502), and downloads from other locations are unauthorized repackaging.",
+    "notice3": "If you encounter various usage problems, please refer to the \"?\" button on the left side of the label bar to view common problems or provide direct feedback."
   }
 }

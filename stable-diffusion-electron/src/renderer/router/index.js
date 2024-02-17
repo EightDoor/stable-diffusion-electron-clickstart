@@ -6,6 +6,7 @@ import NotFound from "@/components/NotFound.vue";
 import Model from "@/views/model/index.vue"
 import CommunicationGroups from '@/views/communication_groups/index.vue';
 import About from '@/views/about/index.vue';
+import Folder from '@/views/folder/index.vue';
 
 const routes = [
     {
@@ -33,6 +34,11 @@ const routes = [
                 component: About,
                 name: "about"
             },
+            {
+            path: "folder",
+            component: Folder,
+            name: "folder"
+            }
         ]
     },
     {path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound},

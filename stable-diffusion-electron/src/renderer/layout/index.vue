@@ -1,19 +1,30 @@
 <template>
   <div class="layout-container">
     <el-menu
-        active-text-color="#ffd04b"
-        background-color="#545c64"
         class="layout-menu"
         default-active="/home"
         menu-trigger="click"
         popper-effect="dark"
         router
-        text-color="#fff"
         @close="handleClose"
         @open="handleOpen"
     >
-      <el-menu-item v-for="(item, index) of list" :key="index" :index="item.path">
-        <span>{{ item.title }}</span>
+      <el-menu-item index="/home">
+        首页
+      </el-menu-item>
+      <el-menu-item index="/model">
+        模型
+      </el-menu-item>
+      <el-menu-item index="/about">
+        关于
+      </el-menu-item>
+      <el-menu-item @click="switchTheme()">
+        <el-icon>
+          <Sunny/>
+        </el-icon>
+        <!--            <el-icon><Moon /></el-icon>-->
+
+        灯泡
       </el-menu-item>
     </el-menu>
     <div class="content">
@@ -29,26 +40,30 @@
 </template>
 <script setup>
 import Footer from "@/components/Footer.vue";
+import {Sunny} from "@element-plus/icons-vue";
+import {useDark, useToggle} from '@vueuse/core'
+import Constant from "@/utils/Constant";
+import {useChangeTheme} from '@/stores';
+
 
 const cacheList = ["home"]
-const list = [
-  {
-    title: "首页",
-    path: "/home"
-  },
-  {
-    title: "文件夹",
-    path: "/model"
-  },
-  // {
-  //   title: "交流群",
-  //   path: "/communicationGroups"
-  // },
-  {
-    title: "关于",
-    path: "/about"
-  },
-]
+const changeTheme = useChangeTheme()
+
+const isDark = useDark(
+    {
+      selector: 'html',
+      attribute: 'class',
+      valueDark: 'dark',
+      valueLight: 'light',
+      storageKey: Constant.colorTheme
+    }
+)
+
+function switchTheme() {
+  changeTheme.change(isDark)
+  const toggle = useToggle(isDark)
+  toggle()
+}
 
 function handleOpen() {
 
@@ -61,7 +76,7 @@ function handleClose() {
 <style lang="scss">
 @import "@/assets/comm";
 
-$layoutWidth: 80px;
+$layoutWidth: 100px;
 .layout-container {
   @include flex(row, flex-start, flex-start);
   width: 100%;

@@ -1,6 +1,14 @@
 <template>
-  <div class="home-title">
-    {{ $t("home.title") }}
+  <div class="header-banner">
+    <div class="title">
+      {{ $t("home.title") }}
+    </div>
+    <div class="title1">
+      {{ $t("home.title1") }}
+    </div>
+    <div class="desc">
+      {{ $t("home.desc") }}
+    </div>
   </div>
   <div class="home-container">
     <el-descriptions :column="2" :title="$t('home.supportingPlatforms')">
@@ -23,7 +31,6 @@
     <!--        </el-icon>-->
     <!--      </div>-->
     <!--    </div>-->
-    <el-divider></el-divider>
     <div v-loading="loading"
          class="systeminfo"
          element-loading-text="获取系统信息中..."
@@ -65,7 +72,7 @@
         <!--            <el-tag type="primary"> {{ formatSize(systemInfo.mem.total) }}</el-tag>-->
         <!--          </el-descriptions-item>-->
         <!--        </el-descriptions>-->
-        <el-descriptions :column="3" direction="vertical" :title="$t('home.graphicsCard')">
+        <el-descriptions :column="3" :title="$t('home.graphicsCard')" direction="vertical">
           <ul>
             <li v-for="(item, index) of systemInfo?.graphics?.controllers" :key="index">
               <template v-if="item.vram">
@@ -87,7 +94,21 @@
       </div>
     </div>
   </div>
-
+  <div class="notice-container">
+    <el-descriptions :column="1" :title="$t('home.notice')">
+      <template #default>
+        <el-descriptions-item>
+          {{ $t("home.notice1") }}
+        </el-descriptions-item>
+        <el-descriptions-item>
+          {{ $t("home.notice2") }}
+        </el-descriptions-item>
+        <el-descriptions-item>
+          {{ $t("home.notice3") }}
+        </el-descriptions-item>
+      </template>
+    </el-descriptions>
+  </div>
   <!--  <div v-if="!startBtnStatus">-->
   <!--    <Terminal ref="termialRef"/>-->
   <!--  </div>-->
@@ -208,6 +229,30 @@ function updateStableDiffusionChildVal() {
 </script>
 
 <style lang="scss" scoped>
+.header-banner {
+  color: white;
+  width: 100%;
+  height: 150px;
+  background: url("@/assets/images/header-banner.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 30px 20px;
+
+  .title {
+    font-size: 15px;
+  }
+
+  .title1 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+
+  .desc {
+    font-size: 15px;
+  }
+}
+
 .home-title {
   height: 50px;
   text-align: center;
@@ -215,8 +260,16 @@ function updateStableDiffusionChildVal() {
   //margin-bottom: 30px;
 }
 
+.notice-container {
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
 .home-container {
+  margin-top: 20px;
   overflow-y: auto;
+
 
   .platform-ui {
     //margin-bottom: 30px;
@@ -245,13 +298,14 @@ function updateStableDiffusionChildVal() {
   }
 
   .systeminfo {
-    min-height: 300px;
+    margin-top: 10px;
   }
 }
 
 
 .action-btn {
   margin: 0 auto;
+  margin-top: 50px;
   width: 300px;
   text-align: center;
   line-height: 60px;

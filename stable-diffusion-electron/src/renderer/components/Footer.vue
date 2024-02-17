@@ -33,8 +33,8 @@ function goUrl(val) {
 @import "@/assets/comm";
 
 .footer {
-  width: calc(100% - 80px);
-  margin-left: 80px;
+  width: calc(100% - 100px);
+  margin-left: 100px;
   height: 35px;
   position: fixed;
   bottom: 0;
