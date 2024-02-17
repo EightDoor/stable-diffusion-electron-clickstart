@@ -5,6 +5,7 @@
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
+    "debug": "npm run start -- --inspect-electron",
     "dev": "npm run start",
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -30,7 +31,6 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "autoprefixer": "^10.4.17",
     "electron": "^28.2.2",
-    "electron-log": "^5.1.1",
     "normalize.css": "^8.0.1",
     "postcss": "^8.4.35",
     "sass": "^1.70.0",
@@ -38,14 +38,16 @@
     "unplugin-auto-import": "^0.17.5",
     "unplugin-icons": "^0.18.5",
     "unplugin-vue-components": "^0.26.0",
-    "update-electron-app": "^3.0.0",
     "vite": "^5.1.1"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
+    "electron-log": "^5.1.1",
     "electron-squirrel-startup": "^1.0.0",
     "element-plus": "^2.5.5",
     "systeminformation": "^5.21.24",
+    "tree-kill": "^1.2.2",
+    "update-electron-app": "^3.0.0",
     "vue": "^3.4.18",
     "vue-router": "^4.2.5"
   }

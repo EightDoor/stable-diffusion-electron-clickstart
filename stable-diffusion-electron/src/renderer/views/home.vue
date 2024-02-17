@@ -2,71 +2,69 @@
   <div class="home-title">
     {{ Config.homeTitle }}
   </div>
-  <div v-if="startBtnStatus" class="home-container">
-    <div class="title">支持平台</div>
-    <el-divider></el-divider>
-    <ul class="platform-ui">
-      <li v-for="(item, index) of platformList" :key="index">
+  <div class="home-container">
+    <el-descriptions :column="2" title="支持平台">
+      <el-descriptions-item v-for="(item, index) of platformList" :key="index">
         <el-tag :type="item.type">
           {{ item.title }}
         </el-tag>
-      </li>
-    </ul>
-    <div class="title">
-      <div>
-        系统信息
-      </div>
-      <div
-          v-if="!loading"
-          class="refresh-icon"
-          @click="getDeviceInfo">
-        <el-icon>
-          <Refresh/>
-        </el-icon>
-      </div>
-    </div>
+      </el-descriptions-item>
+    </el-descriptions>
+    <!--    <div class="title">-->
+    <!--      <div>-->
+    <!--        系统信息-->
+    <!--      </div>-->
+    <!--      <div-->
+    <!--          v-if="!loading"-->
+    <!--          class="refresh-icon"-->
+    <!--          @click="getDeviceInfo">-->
+    <!--        <el-icon>-->
+    <!--          <Refresh/>-->
+    <!--        </el-icon>-->
+    <!--      </div>-->
+    <!--    </div>-->
     <el-divider></el-divider>
     <div v-loading="loading"
          class="systeminfo"
          element-loading-text="获取系统信息中..."
     >
       <div v-if="systemInfo">
-        <el-descriptions title="操作系统">
-          <el-descriptions-item label="系统名称">
-            <el-tag type="primary">{{ systemInfo.osInfo.hostname }}</el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="平台">
-            <el-tag type="primary">{{ systemInfo.osInfo.platform }}</el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="操作系统名称">
-            <el-tag type="primary">{{ systemInfo.osInfo.distro }}</el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="版本">
-            <el-tag type="primary"> {{ systemInfo.osInfo.release }} {{ systemInfo.osInfo.build }}</el-tag>
-          </el-descriptions-item>
-        </el-descriptions>
-        <el-descriptions title="cpu">
-          <el-descriptions-item label="制造商">
-            <el-tag type="primary">{{ systemInfo.cpu.manufacturer }}</el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="型号">
-            <el-tag type="primary">{{ systemInfo.cpu.brand }}</el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="基准速度">
-            <el-tag type="primary">{{ systemInfo.cpu.speed }} GHz</el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="内核">
-            <el-tag type="primary">{{ systemInfo.cpu.physicalCores }}</el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="逻辑处理器">
-            <el-tag type="primary">{{ systemInfo.cpu.cores }}</el-tag>
-          </el-descriptions-item>
-        </el-descriptions>
-        <el-descriptions title="内存">
-          <el-descriptions-item label="总的物理内存">
-            <el-tag type="primary"> {{ formatSize(systemInfo.mem.total) }}</el-tag>
-          </el-descriptions-item>
-        </el-descriptions>
+        <!--        <el-descriptions title="操作系统">-->
+        <!--          <el-descriptions-item label="系统名称">-->
+        <!--            <el-tag type="primary">{{ systemInfo.osInfo.hostname }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--          <el-descriptions-item label="平台">-->
+        <!--            <el-tag type="primary">{{ systemInfo.osInfo.platform }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--          <el-descriptions-item label="操作系统名称">-->
+        <!--            <el-tag type="primary">{{ systemInfo.osInfo.distro }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--          <el-descriptions-item label="版本">-->
+        <!--            <el-tag type="primary"> {{ systemInfo.osInfo.release }} {{ systemInfo.osInfo.build }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--        </el-descriptions>-->
+        <!--        <el-descriptions title="cpu">-->
+        <!--          <el-descriptions-item label="制造商">-->
+        <!--            <el-tag type="primary">{{ systemInfo.cpu.manufacturer }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--          <el-descriptions-item label="型号">-->
+        <!--            <el-tag type="primary">{{ systemInfo.cpu.brand }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--          <el-descriptions-item label="基准速度">-->
+        <!--            <el-tag type="primary">{{ systemInfo.cpu.speed }} GHz</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--          <el-descriptions-item label="内核">-->
+        <!--            <el-tag type="primary">{{ systemInfo.cpu.physicalCores }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--          <el-descriptions-item label="逻辑处理器">-->
+        <!--            <el-tag type="primary">{{ systemInfo.cpu.cores }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--        </el-descriptions>-->
+        <!--        <el-descriptions title="内存">-->
+        <!--          <el-descriptions-item label="总的物理内存">-->
+        <!--            <el-tag type="primary"> {{ formatSize(systemInfo.mem.total) }}</el-tag>-->
+        <!--          </el-descriptions-item>-->
+        <!--        </el-descriptions>-->
         <el-descriptions :column="3" direction="vertical" title="显卡">
           <ul>
             <li v-for="(item, index) of systemInfo?.graphics?.controllers" :key="index">
@@ -90,14 +88,16 @@
     </div>
   </div>
 
-  <div v-if="!startBtnStatus">
-    <Terminal ref="termialRef"/>
-  </div>
+  <!--  <div v-if="!startBtnStatus">-->
+  <!--    <Terminal ref="termialRef"/>-->
+  <!--  </div>-->
   <div class="action">
-    <el-button v-if="startBtnStatus" :disabled="!startBtnStatus" size="large" type="success" @click="oneClickStart">
+    <div v-if="startBtnStatus" class="action-btn" @click="oneClickStart">
       一键启动
-    </el-button>
-    <el-button v-if="!startBtnStatus" size="large" type="danger" @click="oneClickClose">停止</el-button>
+    </div>
+    <div v-if="!startBtnStatus" class="action-btn action-btn-red" @click="oneClickClose">
+      停止
+    </div>
   </div>
 </template>
 
@@ -109,8 +109,6 @@ import ipcRenderer from "@/utils/IpcRenderer";
 import logger from "@/utils/logger";
 import Utils from "@/utils";
 import Config from "@/config";
-import {Refresh} from "@element-plus/icons-vue"
-import Terminal from "@/views/terminal.vue";
 import {ElMessage} from "element-plus";
 
 onMounted(() => {
@@ -147,41 +145,63 @@ const platformList = [
 
 const startBtnStatus = ref(true);
 const termialRef = ref();
-
+const childProcessData = ref()
 
 function oneClickStart() {
   IpcRenderer.oneClickStart();
 }
 
 async function oneClickClose() {
-  const result = await IpcRenderer.oneClickClose();
-  if (result) {
-    startBtnStatus.value = true;
-    ElMessage({
-      message: "关闭成功",
-      type: "success"
-    })
+  const pid = childProcessData.value?.pid;
+  if (pid) {
+    try {
+      const result = await IpcRenderer.oneClickClose(pid);
+      startBtnStatus.value = true;
+      if (result) {
+        ElMessage({
+          message: "关闭成功",
+          type: "success"
+        })
+      } else {
+        ElMessage({
+          message: "关闭失败，请手动关闭",
+          type: "error"
+        })
+      }
+    } catch (e) {
+      ElMessage({
+        message: e.message,
+        type: "error"
+      })
+    }
   } else {
-    ElMessage({
-      message: "关闭失败，请重试",
-      type: "error"
+    ElMessage.error({
+      message: "pid获取失败，请手动关闭",
     })
   }
-  logger.info(result, '终止结果')
 }
 
 function updateStableDiffusionChildVal() {
   ipcRenderer.updateStableDiffusionChildVal((msg) => {
     const result = Utils.jsonDeCode(msg);
-    logger.info(result, 'msg')
-    startBtnStatus.value = false;
-    if (result.type === 'error') {
-      termialRef.value.addItem(result)
-    } else if (result.type === 'close') {
-      startBtnStatus.value = true;
-    } else if (result.type === 'msg') {
-      termialRef.value.addItem(result)
+    console.log(result, 'result')
+    startBtnStatus.value = true;
+    switch (result.type) {
+      case "start":
+        childProcessData.value = result;
+        startBtnStatus.value = false;
+        break;
+      case "error":
+        ElMessage.error("运行出错")
+        startBtnStatus.value = false;
+        break;
+      case "close":
+        startBtnStatus.value = true;
+        break;
+      case "msg":
+        break;
     }
+    // termialRef.value.addItem(result)
   })
 }
 
@@ -192,14 +212,14 @@ function updateStableDiffusionChildVal() {
   height: 50px;
   text-align: center;
   font-size: 30px;
-  margin-bottom: 30px;
+  //margin-bottom: 30px;
 }
 
 .home-container {
   overflow-y: auto;
 
   .platform-ui {
-    margin-bottom: 30px;
+    //margin-bottom: 30px;
   }
 
   .title {
@@ -229,10 +249,24 @@ function updateStableDiffusionChildVal() {
   }
 }
 
-.action {
-  position: fixed;
-  bottom: 15px;
-  right: 30px;
-  z-index: 2;
+
+.action-btn {
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+  line-height: 60px;
+  height: 60px;
+  background: #67c23a;
+  color: white;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.action-btn-red {
+  @extend .action-btn;
+  background: red;
 }
 </style>

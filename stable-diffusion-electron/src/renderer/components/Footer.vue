@@ -1,13 +1,18 @@
 <template>
   <div class="footer">
-    <ul class="ul">
-      <li>
-        <span>作者: {{ footerInfo.author }}</span>
-      </li>
-      <li @click="goUrl(footerInfo.biliUrl)">
-        <span class="href">B站</span>
-      </li>
-    </ul>
+    <div>
+      <ul class="ul">
+        <li>
+          <span>作者: {{ footerInfo.author }}</span>
+        </li>
+        <li @click="goUrl(footerInfo.biliUrl)">
+          <span class="href">B站</span>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <slot/>
+    </div>
   </div>
 </template>
 
@@ -28,7 +33,8 @@ function goUrl(val) {
 @import "@/assets/comm";
 
 .footer {
-  width: 100%;
+  width: calc(100% - 80px);
+  margin-left: 80px;
   height: 35px;
   position: fixed;
   bottom: 0;

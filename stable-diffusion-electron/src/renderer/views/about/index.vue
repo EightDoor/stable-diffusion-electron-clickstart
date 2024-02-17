@@ -1,5 +1,5 @@
 <template>
-  <el-descriptions :column="2" border title="应用">
+  <el-descriptions :column="2" border title="启动器">
     <el-descriptions-item label="版本">{{ toolSettings.version }}</el-descriptions-item>
   </el-descriptions>
   <CommunicationGroups class="space"/>

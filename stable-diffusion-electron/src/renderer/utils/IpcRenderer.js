@@ -22,8 +22,8 @@ const IpcRenderer = {
     oneClickStart() {
         window.electronApI.oneClickStart();
     },
-    async oneClickClose() {
-        return window.electronApI.oneClickClose();
+    async oneClickClose(pid) {
+        return window.electronApI.oneClickClose(pid);
     },
     /**
      * 更新终端数据

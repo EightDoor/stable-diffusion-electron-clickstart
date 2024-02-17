@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bdc42073-1c59-4354-a7cd-7f819c08dc31" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run-directml.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run-directml.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +17,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/webui-directml" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,9 +40,9 @@
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "master",
     "ignore_missing_gitignore": "true",
-    "javascript.nodejs.core.library.configured.version": "18.17.1",
-    "javascript.nodejs.core.library.typings.version": "18.17.19",
-    "last_opened_file_path": "F:/project/my-project/stable-diffusion-all",
+    "javascript.nodejs.core.library.configured.version": "20.11.1",
+    "javascript.nodejs.core.library.typings.version": "20.11.19",
+    "last_opened_file_path": "F:/project/my-project/stable-diffusion-all/stable-diffusion-electron/node_modules/@electron-forge/core",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,7 +52,7 @@
     "npm.dev --inspect-electron.executor": "Debug",
     "npm.dev.executor": "Debug",
     "npm.start -- --inspect-electron.executor": "Run",
-    "npm.start.executor": "Run",
+    "npm.start.executor": "Debug",
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "C:\\Users\\zhoukai\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
@@ -61,6 +62,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\project\my-project\stable-diffusion-all\stable-diffusion-electron\node_modules\@electron-forge\core" />
+      <recent name="F:\project\my-project\stable-diffusion-all\stable-diffusion-electron\node_modules\@electron-forge\cli" />
       <recent name="D:\project\my-project\stable-diffusion-all\webui" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -109,6 +112,11 @@
       <workItem from="1708067446865" duration="74000" />
       <workItem from="1708067534242" duration="716000" />
       <workItem from="1708074374725" duration="13251000" />
+      <workItem from="1708089406662" duration="4490000" />
+      <workItem from="1708093938440" duration="1000" />
+      <workItem from="1708129863080" duration="390000" />
+      <workItem from="1708130299170" duration="6210000" />
+      <workItem from="1708138180401" duration="11247000" />
     </task>
     <servers />
   </component>

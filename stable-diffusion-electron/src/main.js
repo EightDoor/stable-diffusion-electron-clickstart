@@ -1,12 +1,15 @@
 const {app, BrowserWindow, Menu, ipcMain, shell, utilityProcess, clipboard} = require('electron');
 const path = require('path');
-const fs = require("node:fs/promises")
+const fsPromises = require("node:fs/promises")
+const fs = require("node:fs")
 const child_process = require("node:child_process")
 const log = require("electron-log/main")
 const systeminfo = require("systeminformation")
-const {updateElectronApp} = require('update-electron-app');
+const crypto = require("crypto")
+const kill = require("tree-kill")
+// const {updateElectronApp} = require('update-electron-app');
 
-updateElectronApp();
+// updateElectronApp();
 
 log.initialize()
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -108,17 +111,17 @@ function jsonEncode(val) {
  */
 function getDeviceInfo(event) {
     return new Promise(async (resolve, reject) => {
-        const cpu = await systeminfo.cpu();
-        const mem = await systeminfo.mem()
+        // const cpu = await systeminfo.cpu();
+        // const mem = await systeminfo.mem()
         const graphics = await systeminfo.graphics()
-        const osInfo = await systeminfo.osInfo()
+        // const osInfo = await systeminfo.osInfo()
         // const users = await systeminfo.users()
 
         const result = {
-            cpu: cpu,
-            mem: mem,
+            // cpu: cpu,
+            // mem: mem,
             graphics: graphics,
-            osInfo: osInfo,
+            // osInfo: osInfo,
             // users: users
         }
         resolve(jsonEncode(result))
@@ -156,15 +159,16 @@ function getFolderFiles(event, folder) {
 
         const folderPath = path.join(projectBasePath, folder)
         console.log(folderPath, 'folderPath')
-        fs.readdir(folderPath, {
+        fsPromises.readdir(folderPath, {
             recursive: false,  // 不需要读取目录内容 递归
         }).then(async (files) => {
             const list = []
             for (let i = 0; i < files.length; i++) {
                 const file = files[i];
                 const filePath = path.join(folderPath, file);
-                const stat = await fs.stat(filePath)
+                const stat = await fsPromises.stat(filePath)
                 const fileType = stat.isFile() ? "文件" : stat.isDirectory() ? '文件夹' : '未知'
+                // const SHA256 = hashFileAsync(filePath, algorithmType.SHA256)
                 const obj = {
                     size: stat.size,
                     name: file,
@@ -172,6 +176,7 @@ function getFolderFiles(event, folder) {
                     path: filePath,
                     createTime: stat.birthtime,
                     updateTime: stat.mtime,
+                    // SHA256,
                 }
                 list.push(obj)
             }
@@ -187,22 +192,31 @@ function openFolder(event, folderPath) {
     shell.openPath(fullPath)
 }
 
-// TODO  现在只能是一个命令，  需要做一个Map 存储  适用于打开其他的命令
-// TODO 不然kill的时候 只能是关闭最后一个
-let childSProcessStable = null;
+/**
+ * 保存执行的命令childProcess
+ * @type {Map<any, any>}
+ */
+const childProcessData = new Map()
 
 /**
  * 关闭启动的终端
  */
-function oneClickClose() {
-    if (childSProcessStable) {
-        const result = childSProcessStable.kill("SIGINT");
-        if (result) {
-            childSProcessStable = null;
+function oneClickClose(event, pid) {
+    return new Promise((resolve, reject) => {
+        const child = childProcessData.get(pid)
+        if (child) {
+            child.unref()
+            removeChildProcess(pid);
+            kill(pid, "SIGKILL", function (err) {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(true)
+                }
+            })
         }
-        return result;
-    }
-    return false;
+        resolve(true)
+    })
 }
 
 /**
@@ -210,19 +224,13 @@ function oneClickClose() {
  */
 function oneClickStart(event) {
     const pathUrl = path.join(projectBasePath, "run-directml.bat")
-    // executeProcessChild(pathUrl, mainToRendererStable, [], {
-    //     cwd: cwdPath,
-    // })
-    executeProcessChildTwo(pathUrl, [], {
+    executeProcessChild(pathUrl, mainToRendererStable, [], {
         cwd: projectBasePath,
         detached: true,
+        stdio: "ignore",
     })
 }
 
-
-function executeProcessChildTwo(pathUrl, args, options) {
-    child_process.spawn(pathUrl, args, options)
-}
 
 /**
  * 执行命令
@@ -235,46 +243,62 @@ function executeProcessChildTwo(pathUrl, args, options) {
 function executeProcessChild(pathUrl, sendMsgFun, args = [], options = {}) {
     const result = {
         type: '',
-        data: ''
+        data: '',
+        pid: '',
     }
-    const processStartPath = path.join(__dirname, pathUrl)
-    log.debug(processStartPath, 'processStartPath')
-    if (!childSProcessStable) {
-        childSProcessStable = child_process.spawn(processStartPath, args, options)
-        childSProcessStable.on('spawn', (code) => {
+    log.debug(pathUrl, 'pathUrl')
+    const ls = child_process.spawn(pathUrl, args, options)
+    if (ls) {
+        ls.on('spawn', (code) => {
             log.debug('进程生成成功 spawn')
-            // result.type = 'spawn'
-            // result.data = code
-            // log.info(code)
-            // mainToRendererStable(result);
+            result.type = 'start'
+            result.data = bufferToTxt(code ?? "")
+            result.pid = ls.pid
+            childProcessData.set(result.pid, ls);
+            sendMsgFun(result)
         });
-        childSProcessStable.stdout.on('data', (data) => {
-            result.type = 'msg';
-            result.data = bufferToTxt(data)
+        if (ls.stdout) {
+            ls.stdout.on('data', (data) => {
+                result.type = 'msg';
+                result.data = bufferToTxt(data)
+                // sendMsgFun(result)
+            });
+        }
+
+        if (ls.stderr) {
+            ls.stderr.on('data', (data) => {
+                result.type = 'error';
+                result.data = bufferToTxt(data)
+                sendMsgFun(result)
+            });
+        }
+        ls.on('error', (code) => {
+            // removeChildProcess(ls.pid);
+            log.debug('子进程退出 exit')
+            result.type = 'close'
+            result.data = bufferToTxt(code)
             sendMsgFun(result)
         });
 
-        childSProcessStable.stderr.on('data', (data) => {
-            result.type = 'error';
-            result.data = bufferToTxt(data)
+        ls.on('close', (code) => {
+            // removeChildProcess(ls.pid);
+            log.debug('子进程退出 exit')
+            result.type = 'close'
+            result.data = code
             sendMsgFun(result)
         });
-
-        childSProcessStable.on('close', (code) => {
+        ls.on('exit', (code) => {
+            // removeChildProcess(ls.pid);
             log.debug('进程退出 exit')
             result.type = 'close'
             result.data = code
             sendMsgFun(result)
         });
-        childSProcessStable.on('exit', (code) => {
-            log.debug('进程退出 exit')
-            result.type = 'exit'
-            result.data = code
-            sendMsgFun(result)
-        });
-    } else {
-        log.error("进程正在运行中!")
     }
+}
+
+function removeChildProcess(pid) {
+    childProcessData.delete(pid);
 }
 
 function mainToRendererStable(value) {
@@ -289,6 +313,34 @@ function mainToRenderer(type, value) {
     mainWindow.webContents.send(type, jsonEncode(value))
 }
 
+/**
+ * buff转换字符串
+ * @param buffer
+ * @returns {string}
+ */
 function bufferToTxt(buffer) {
     return buffer.toString('utf-8');
+}
+
+const algorithmType = {
+    SHA256: "SHA256",
+    SHA1: "SHA1",
+    MD5: "MD5"
+}
+
+async function hashFileAsync(filePath, algorithm) {
+    try {
+        if (!fs.existsSync(filePath)) {
+            throw new Error("The file does not exist, make sure your file is correct!");
+        }
+        if (!algorithmType.hasOwnProperty(algorithm)) {
+            throw new Error("Non-support algorithm, make sure your algorithm is [SHA256, SHA1, MD5] !");
+        }
+        let buffer = fs.readFileSync(filePath);
+        let hash = crypto.createHash(algorithm.toLowerCase());
+        hash.update(buffer);
+        return hash.digest('hex');
+    } catch (error) {
+        return error;
+    }
 }
