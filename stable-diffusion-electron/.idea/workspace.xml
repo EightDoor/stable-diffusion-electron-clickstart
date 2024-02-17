@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/images/header-banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/stores/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/utils/Constant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/views/folder/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/install-state.gz" beforeDir="false" afterPath="$PROJECT_DIR$/.yarn/install-state.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components/Footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/language/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/language/en-US.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/language/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/language/zh-CN.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +94,7 @@
       <workItem from="1708172113187" duration="18000" />
       <workItem from="1708172141048" duration="93000" />
       <workItem from="1708172246939" duration="62000" />
-      <workItem from="1708172321110" duration="7599000" />
+      <workItem from="1708172321110" duration="7693000" />
     </task>
     <servers />
   </component>

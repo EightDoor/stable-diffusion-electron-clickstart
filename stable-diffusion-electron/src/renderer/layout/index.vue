@@ -19,10 +19,12 @@
         关于
       </el-menu-item>
       <el-menu-item @click="switchTheme()">
-        <el-icon>
+        <el-icon v-if="!isDark">
           <Sunny/>
         </el-icon>
-        <!--            <el-icon><Moon /></el-icon>-->
+        <el-icon v-else>
+          <Moon/>
+        </el-icon>
 
         灯泡
       </el-menu-item>
@@ -40,7 +42,7 @@
 </template>
 <script setup>
 import Footer from "@/components/Footer.vue";
-import {Sunny} from "@element-plus/icons-vue";
+import {Moon, Sunny} from "@element-plus/icons-vue";
 import {useDark, useToggle} from '@vueuse/core'
 import Constant from "@/utils/Constant";
 import {useChangeTheme} from '@/stores';
