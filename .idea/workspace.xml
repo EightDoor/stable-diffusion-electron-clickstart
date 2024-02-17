@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bdc42073-1c59-4354-a7cd-7f819c08dc31" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run-directml.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run-directml.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +51,9 @@
     "npm.dev --inspect-electron.executor": "Debug",
     "npm.dev.executor": "Debug",
     "npm.start -- --inspect-electron.executor": "Run",
-    "npm.start.executor": "Debug",
+    "npm.start.executor": "Run",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "org.i18nally.jetbrainsideplugin.settings.AllyProjectConfigurable",
     "ts.external.directory.path": "C:\\Users\\zhoukai\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "two.files.diff.last.used.file": "D:/project/my-project/stable-diffusion-all/stable-diffusion-electron/src/main.js",
     "vue.rearranger.settings.migration": "true"
@@ -116,7 +115,12 @@
       <workItem from="1708093938440" duration="1000" />
       <workItem from="1708129863080" duration="390000" />
       <workItem from="1708130299170" duration="6210000" />
-      <workItem from="1708138180401" duration="11247000" />
+      <workItem from="1708138180401" duration="16537000" />
+      <workItem from="1708162371745" duration="643000" />
+      <workItem from="1708163032460" duration="34000" />
+      <workItem from="1708163075919" duration="37000" />
+      <workItem from="1708163234979" duration="8000" />
+      <workItem from="1708163345801" duration="302000" />
     </task>
     <servers />
   </component>

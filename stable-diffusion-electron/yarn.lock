@@ -904,6 +904,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@intlify/core-base@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@intlify/core-base@npm:9.9.0"
+  dependencies:
+    "@intlify/message-compiler": "npm:9.9.0"
+    "@intlify/shared": "npm:9.9.0"
+  checksum: 10c0/720d166ab3d77562fcabdbf0d415f8882579da46feacb1c662dd8bc10629504d4e4fd024ff42037ba32eae0f0f542c2697b12d65b00e18f918ce89e25929c327
+  languageName: node
+  linkType: hard
+
+"@intlify/message-compiler@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@intlify/message-compiler@npm:9.9.0"
+  dependencies:
+    "@intlify/shared": "npm:9.9.0"
+    source-map-js: "npm:^1.0.2"
+  checksum: 10c0/1b22dd6aacacca49de3854c0fda01f4d7c9c3995525855eca1a5697b9bc85b8c391d38ef877805e2b32cd70993ad4489ce719d2c19b3e9d1b9dbc12e7f81f971
+  languageName: node
+  linkType: hard
+
+"@intlify/shared@npm:9.9.0":
+  version: 9.9.0
+  resolution: "@intlify/shared@npm:9.9.0"
+  checksum: 10c0/f84f5d4ae8b73c9b09253152d4be298a80c7ccfe4fa5b3b3196633907c8c0877c71e0b7889c84881be714c4930cf16e72e27d2fe73bc377c18bc2cddd5199092
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -5985,6 +6012,7 @@ __metadata:
     update-electron-app: "npm:^3.0.0"
     vite: "npm:^5.1.1"
     vue: "npm:^3.4.18"
+    vue-i18n: "npm:9.9.0"
     vue-router: "npm:^4.2.5"
   languageName: unknown
   linkType: soft
@@ -6690,6 +6718,19 @@ __metadata:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
   checksum: 10c0/303216e3e6ee3f6ab5631488dd00a767ef3760a0a14e580c0223b278d093dc9ada8164ecec6bf8d8e12034e0bdf8dbb947c0c6f83095c6a53030a4a6dcbd57ce
+  languageName: node
+  linkType: hard
+
+"vue-i18n@npm:9.9.0":
+  version: 9.9.0
+  resolution: "vue-i18n@npm:9.9.0"
+  dependencies:
+    "@intlify/core-base": "npm:9.9.0"
+    "@intlify/shared": "npm:9.9.0"
+    "@vue/devtools-api": "npm:^6.5.0"
+  peerDependencies:
+    vue: ^3.0.0
+  checksum: 10c0/da111f980d9df5023f83891fd9f78cad08f9cbbf86fc5f2a0f758a74e8393d19993b25d7b53c704375f365078e689d4efa682dae82b229f22ec0af8b82f7b6c0
   languageName: node
   linkType: hard
 

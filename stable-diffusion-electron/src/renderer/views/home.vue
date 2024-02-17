@@ -1,9 +1,9 @@
 <template>
   <div class="home-title">
-    {{ Config.homeTitle }}
+    {{ $t("home.title") }}
   </div>
   <div class="home-container">
-    <el-descriptions :column="2" title="支持平台">
+    <el-descriptions :column="2" :title="$t('home.supportingPlatforms')">
       <el-descriptions-item v-for="(item, index) of platformList" :key="index">
         <el-tag :type="item.type">
           {{ item.title }}
@@ -65,7 +65,7 @@
         <!--            <el-tag type="primary"> {{ formatSize(systemInfo.mem.total) }}</el-tag>-->
         <!--          </el-descriptions-item>-->
         <!--        </el-descriptions>-->
-        <el-descriptions :column="3" direction="vertical" title="显卡">
+        <el-descriptions :column="3" direction="vertical" :title="$t('home.graphicsCard')">
           <ul>
             <li v-for="(item, index) of systemInfo?.graphics?.controllers" :key="index">
               <template v-if="item.vram">
@@ -108,8 +108,8 @@ import IpcRenderer from "@/utils/IpcRenderer";
 import ipcRenderer from "@/utils/IpcRenderer";
 import logger from "@/utils/logger";
 import Utils from "@/utils";
-import Config from "@/config";
 import {ElMessage} from "element-plus";
+
 
 onMounted(() => {
   getDeviceInfo();

@@ -1,0 +1,48 @@
+{
+  "version" : "1.2",
+  "profiles" : [ {
+    "id" : "f3f09e34-1f2f-4cb0-a65b-503f0cd4122b",
+    "name" : "Vue-i18n",
+    "keyNamingPattern" : "CAMEL_CASE_PATTERN",
+    "sink" : {
+      "id" : "cbe1d8af-407e-4b90-b846-7f8da717c982",
+      "type" : "namespaced",
+      "translationsDirectory" : "$PROJECT_DIR$/stable-diffusion-electron/out/stable-diffusion-electron-win32-x64/resources",
+      "fileType" : "javascript",
+      "defaultLocale" : "app",
+      "namespaces" : [ "forge", "postcss", "tailwind" ],
+      "outputFilenameTemplate" : "%locale%/%namespace%.%locale%.js",
+      "nestingType" : "DISABLED",
+      "placeholderFormatterName" : "ICU"
+    },
+    "sources" : [ {
+      "id" : "c9fa7bb4-45ff-4660-90c1-334a234c103b",
+      "type" : "js",
+      "scopeName" : "项目文件",
+      "scopePattern" : "",
+      "defaultReplacementTemplate" : "$t('%key%', %map%)",
+      "recognizedReplacementTemplates" : [ ],
+      "skipDefaultNamespace" : false
+    }, {
+      "id" : "d3653d93-3ea6-4fb8-b8e8-6f40edf6acd9",
+      "type" : "htmlvue",
+      "scopeName" : "项目文件",
+      "scopePattern" : "",
+      "defaultReplacementTemplate" : "$t('%key%', %map%)",
+      "attributeReplacementTemplate" : "",
+      "inlineTagsReplacementTemplate" : "",
+      "recognizedReplacementTemplates" : [ ],
+      "inlineTagNames" : [ ],
+      "translatableAttributeNames" : [ "title", "alt", "placeholder", "label", "aria-label", "v-text", "v-html" ],
+      "skipDefaultNamespace" : false
+    } ]
+  } ],
+  "ignores" : {
+    "valuesInProject" : [ "use strict" ],
+    "valuesInFile" : { },
+    "filesInProject" : [ ],
+    "unignoredFunctionNames" : [ ],
+    "unignoredFunctionArguments" : { },
+    "ignoredArrayKeys" : [ "class", "selector", "template", "middleware", "layout", "el", "component", "type", "name", "id", "key", "sql", "query", "dateFormat", "date", "condition" ]
+  }
+}
