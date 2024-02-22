@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu, ipcMain, shell, utilityProcess, clipboard} = require('electron');
+const {app, BrowserWindow, Menu, ipcMain, shell, utilityProcess, clipboard, dialog} = require('electron');
 const path = require('path');
 const fsPromises = require("node:fs/promises")
 const fs = require("node:fs")
@@ -85,6 +85,7 @@ const icpListenInit = () => {
     ipcMain.handle("getFolderFiles", getFolderFiles)
     ipcMain.on("openFolder", openFolder)
     ipcMain.on("clipboardWriteText", clipboardWriteText)
+    ipcMain.handle("saveFile", saveFile)
 }
 
 function getFileSize(size) {//把字节转换成正常文件大小
@@ -146,6 +147,30 @@ function openExternalUrl(event, url) {
  */
 function clipboardWriteText(event, text) {
     clipboard.writeText(text)
+}
+
+/**
+ * 保存文件
+ * @param event
+ * @param path 需要保存的路径
+ * @param title
+ */
+function saveFile(event, savePath, title = '') {
+    return new Promise((resolve, reject) => {
+        dialog.showSaveDialog({
+            title,
+        }).then(res => {
+            console.log(res, 'res')
+            const savePathResult = path.join(projectBasePath, savePath)
+            fsPromises.writeFile(res.filePath, savePathResult).then(() => {
+                resolve()
+            }).catch((err) => {
+                reject(err)
+            })
+        }).catch(err => {
+            reject(err)
+        })
+    })
 }
 
 

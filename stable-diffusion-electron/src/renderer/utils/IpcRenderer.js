@@ -52,6 +52,13 @@ const IpcRenderer = {
      */
     clipboardWriteText(text) {
         window.electronApI.clipboardWriteText(text);
+    },
+    /**
+     * 保存文件
+     * @param path
+     */
+    async saveFile(path) {
+        return window.electronApI.saveFile(path, "添加模型");
     }
 }
 

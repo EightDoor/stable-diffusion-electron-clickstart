@@ -2,7 +2,26 @@
   <div>
     <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
       <el-tab-pane v-for="(item, index) of tabsList" :key="index" :label="item.label" :name="item.name">
-        <el-button type="primary" @click="openFolder(item.path)">打开文件夹</el-button>
+
+        <el-button type="primary" @click="openFolder(item.path)">
+          <el-icon class="space-right">
+            <Folder/>
+          </el-icon>
+          打开文件夹
+        </el-button>
+        <el-button type="warning" @click="refreshPage(itemh)">
+          <el-icon class="space-right">
+            <Refresh/>
+          </el-icon>
+          刷新列表
+        </el-button>
+        <el-button type="success" @click="addModel(item)">
+          <el-icon class="space-right">
+            <DocumentAdd/>
+          </el-icon>
+          添加模型
+        </el-button>
+
         <el-table :data="item.list" empty-text="没有文件" style="width: 100%">
           <el-table-column label="文件名称" prop="name"/>
           <el-table-column label="文件类型" prop="fileType">
@@ -24,6 +43,8 @@ import {onMounted, ref} from 'vue';
 import IpcRenderer from "@/utils/IpcRenderer";
 import logger from "@/utils/logger";
 import Utils from "@/utils";
+import {DocumentAdd, Folder, Refresh} from "@element-plus/icons-vue";
+import {ElMessage} from "element-plus";
 
 
 const activeName = ref("ckpt")
@@ -59,6 +80,10 @@ function handleClick(e) {
   console.log(e)
   activeName.value = e.paneName;
   getActiveNameFiles()
+}
+
+function getActiveItem(name) {
+  return tabsList.value.find((item) => item.name === name)
 }
 
 async function getFiles(path) {
@@ -103,11 +128,37 @@ function openFolder(folder) {
   IpcRenderer.openFolder(folder)
 }
 
-onMounted(() => {
+function refreshPage(item) {
   getActiveNameFiles()
+  ElMessage({
+    message: "刷新成功",
+    type: 'success'
+  })
+}
+
+function addModel() {
+  const info = getActiveItem(activeName.value)
+  // 添加模型
+  IpcRenderer.saveFile(info.path).then(() => {
+    ElMessage.success({
+      message: "保存成功"
+    })
+    getActiveNameFiles();
+  }).catch(err => {
+    logger.error(err, '保存文件失败')
+    ElMessage.error({
+      message: "保存失败，请重试"
+    })
+  });
+}
+
+onMounted(() => {
+  getActiveNameFiles(activeName.value)
 })
 </script>
 
 <style lang="scss" scoped>
-
+.space-right {
+  margin-right: 5px;
+}
 </style>
