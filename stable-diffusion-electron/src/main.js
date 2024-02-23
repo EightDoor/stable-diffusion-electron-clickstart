@@ -152,21 +152,30 @@ function clipboardWriteText(event, text) {
 /**
  * 保存文件
  * @param event
- * @param path 需要保存的路径
+ * @param savePath
  * @param title
  */
 function saveFile(event, savePath, title = '') {
     return new Promise((resolve, reject) => {
         dialog.showSaveDialog({
             title,
-        }).then(res => {
+        }).then(async res => {
             console.log(res, 'res')
-            const savePathResult = path.join(projectBasePath, savePath)
-            fsPromises.writeFile(res.filePath, savePathResult).then(() => {
-                resolve()
-            }).catch((err) => {
-                reject(err)
-            })
+            if (!res.canceled) {
+                const filePath = res.filePath;
+                // 获取文件名称
+                const fileName = path.basename(filePath)
+                const savePathResult = path.join(projectBasePath, savePath, fileName)
+                // 读取源文件内容
+                const data = await fsPromises.readFile(filePath);
+                fsPromises.writeFile(savePathResult, data).then(() => {
+                    resolve(true)
+                }).catch((err) => {
+                    reject(err)
+                })
+            } else {
+                resolve(false);
+            }
         }).catch(err => {
             reject(err)
         })

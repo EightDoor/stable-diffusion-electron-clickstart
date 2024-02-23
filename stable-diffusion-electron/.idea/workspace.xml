@@ -7,8 +7,6 @@
     <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/preload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/utils/IpcRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/utils/IpcRenderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/views/model/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/model/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,6 +98,7 @@
       <workItem from="1708172246939" duration="62000" />
       <workItem from="1708172321110" duration="7693000" />
       <workItem from="1708613817213" duration="2149000" />
+      <workItem from="1708699666734" duration="1385000" />
     </task>
     <servers />
   </component>
