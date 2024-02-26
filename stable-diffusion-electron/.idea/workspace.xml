@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/renderer/views/help/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vite.base.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/utils/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/model/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/model/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/install-state.gz" beforeDir="false" afterPath="$PROJECT_DIR$/.yarn/install-state.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forge.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/forge.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ipc_communication/ipc_home_constant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ipc_communication/ipc_home_main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ipc_communication/ipc_home_preload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/language/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/language/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/language/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/language/zh-CN.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/layout/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.main.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/vite.main.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.preload.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/vite.preload.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.renderer.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/vite.renderer.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.renderer.config.mjs.timestamp-1708093842168-19fae971d3859.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../webui-directml" beforeDir="false" afterPath="$PROJECT_DIR$/../webui-directml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,30 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "master",
-    "javascript.nodejs.core.library.configured.version": "20.11.1",
-    "javascript.nodejs.core.library.typings.version": "20.11.19",
-    "last_opened_file_path": "F:/project/my-project/stable-diffusion-all/stable-diffusion-electron/src/renderer/assets/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "yarn",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "ts.external.directory.path": "C:\\Users\\zhoukai\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.11.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.11.19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/project/my-project/stable-diffusion-all/stable-diffusion-electron/src/renderer/assets/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\zhoukai\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\project\my-project\stable-diffusion-all\stable-diffusion-electron\src\renderer\assets\images" />
@@ -101,7 +116,7 @@
       <workItem from="1708172321110" duration="7693000" />
       <workItem from="1708613817213" duration="2149000" />
       <workItem from="1708699666734" duration="1385000" />
-      <workItem from="1708951386145" duration="2974000" />
+      <workItem from="1708951386145" duration="8332000" />
     </task>
     <servers />
   </component>

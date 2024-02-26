@@ -10,13 +10,28 @@
         @open="handleOpen"
     >
       <el-menu-item index="/home">
+        <el-icon>
+          <House/>
+        </el-icon>
         首页
       </el-menu-item>
       <el-menu-item index="/model">
+        <el-icon>
+          <CopyDocument/>
+        </el-icon>
         模型
       </el-menu-item>
       <el-menu-item index="/about">
+        <el-icon>
+          <Paperclip/>
+        </el-icon>
         关于
+      </el-menu-item>
+      <el-menu-item index="/help">
+        <el-icon>
+          <Help/>
+        </el-icon>
+        帮助
       </el-menu-item>
       <el-menu-item @click="switchTheme()">
         <el-icon v-if="!isDark">
@@ -25,7 +40,6 @@
         <el-icon v-else>
           <Moon/>
         </el-icon>
-
         灯泡
       </el-menu-item>
     </el-menu>
@@ -42,7 +56,7 @@
 </template>
 <script setup>
 import Footer from "@/components/Footer.vue";
-import {Moon, Sunny} from "@element-plus/icons-vue";
+import {CopyDocument, Help, House, Moon, Paperclip, Sunny} from "@element-plus/icons-vue";
 import {useDark, useToggle} from '@vueuse/core'
 import Constant from "@/utils/Constant";
 import {useChangeTheme} from '@/stores';
@@ -66,6 +80,7 @@ function switchTheme() {
   const toggle = useToggle(isDark)
   toggle()
 }
+
 
 function handleOpen() {
 
