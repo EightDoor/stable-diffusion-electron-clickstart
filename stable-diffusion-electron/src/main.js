@@ -88,19 +88,19 @@ const icpListenInit = () => {
     ipcMain.handle("saveFile", saveFile)
 }
 
-function getFileSize(size) {//把字节转换成正常文件大小
-    if (!size) return "";
-    const num = 1024.00; //byte
-    if (size < num)
-        return size + "B";
-    if (size < Math.pow(num, 2))
-        return (size / num).toFixed(2) + "KB"; //kb
-    if (size < Math.pow(num, 3))
-        return (size / Math.pow(num, 2)).toFixed(2) + "MB"; //M
-    if (size < Math.pow(num, 4))
-        return (size / Math.pow(num, 3)).toFixed(2) + "G"; //G
-    return (size / Math.pow(num, 4)).toFixed(2) + "T"; //T
-}
+// function getFileSize(size) {//把字节转换成正常文件大小
+//     if (!size) return "";
+//     const num = 1024.00; //byte
+//     if (size < num)
+//         return size + "B";
+//     if (size < Math.pow(num, 2))
+//         return (size / num).toFixed(2) + "KB"; //kb
+//     if (size < Math.pow(num, 3))
+//         return (size / Math.pow(num, 2)).toFixed(2) + "MB"; //M
+//     if (size < Math.pow(num, 4))
+//         return (size / Math.pow(num, 3)).toFixed(2) + "G"; //G
+//     return (size / Math.pow(num, 4)).toFixed(2) + "T"; //T
+// }
 
 function jsonEncode(val) {
     return JSON.stringify(val)
@@ -157,25 +157,36 @@ function clipboardWriteText(event, text) {
  */
 function saveFile(event, savePath, title = '') {
     return new Promise((resolve, reject) => {
-        dialog.showSaveDialog({
+        dialog.showOpenDialog({
             title,
+            properties: [
+                {
+                    multiSelections: false,  // 允许多选
+                    showHiddenFiles: true, // 显示对话框中的隐藏文件
+                    openDirectory: false,  // 允许选择文件夹
+                }
+            ]
         }).then(async res => {
             console.log(res, 'res')
             if (!res.canceled) {
-                const filePath = res.filePath;
-                // 获取文件名称
-                const fileName = path.basename(filePath)
-                const savePathResult = path.join(projectBasePath, savePath, fileName)
-                // 读取源文件内容
-                const data = await fsPromises.readFile(filePath);
-                fsPromises.writeFile(savePathResult, data).then(() => {
-                    resolve(true)
-                }).catch((err) => {
-                    reject(err)
+                const filePaths = res.filePaths;
+                for (const filePath of filePaths) {
+                    // 获取文件名称
+                    const fileName = path.basename(filePath)
+                    const savePathResult = path.join(projectBasePath, savePath, fileName)
+                    await fsPromises.copyFile(filePath, savePathResult)
+                }
+                resolve({
+                    type: "success",
+                    msg: "保存成功"
                 })
             } else {
-                resolve(false);
+                resolve({
+                    type: "warning",
+                    msg: "取消选择"
+                });
             }
+
         }).catch(err => {
             reject(err)
         })

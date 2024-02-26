@@ -139,13 +139,12 @@ function refreshPage(item) {
 function addModel() {
   const info = getActiveItem(activeName.value)
   // 添加模型
-  IpcRenderer.saveFile(info.path).then((res) => {
-    if (res) {
-      ElMessage.success({
-        message: "保存成功"
-      })
-      getActiveNameFiles();
-    }
+  IpcRenderer.saveFile(info.path, '保存模型').then((res) => {
+    ElMessage({
+      type: res.type,
+      message: res.msg
+    })
+    getActiveNameFiles();
   }).catch(err => {
     logger.error(err, '保存文件失败')
     ElMessage.error({
