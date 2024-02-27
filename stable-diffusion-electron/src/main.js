@@ -58,6 +58,7 @@ app.on('ready', createWindow);
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
+        clearChildProcess();
         app.quit();
     }
 });
@@ -242,6 +243,16 @@ function openFolder(event, folderPath) {
  * @type {Map<any, any>}
  */
 const childProcessData = new Map()
+
+/**
+ * 关闭软件 清空所有的child process
+ */
+function clearChildProcess() {
+    for (const [key, value] of childProcessData) {
+        removeChildProcess(key);
+        kill(key, "SIGKILL")
+    }
+}
 
 /**
  * 关闭启动的终端

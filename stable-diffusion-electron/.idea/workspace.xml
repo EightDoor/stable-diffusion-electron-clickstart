@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.yarn/install-state.gz" beforeDir="false" afterPath="$PROJECT_DIR$/.yarn/install-state.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/language/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/language/zh-CN.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/folder/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/folder/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/model/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/model/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/views/about/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/about/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../webui-directml" beforeDir="false" afterPath="$PROJECT_DIR$/../webui-directml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +103,7 @@
       <workItem from="1708951386145" duration="8332000" />
       <workItem from="1709039251985" duration="730000" />
       <workItem from="1709040482105" duration="47000" />
-      <workItem from="1709041094326" duration="1280000" />
+      <workItem from="1709041094326" duration="2206000" />
     </task>
     <servers />
   </component>
