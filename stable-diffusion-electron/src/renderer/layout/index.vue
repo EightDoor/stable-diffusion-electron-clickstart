@@ -15,6 +15,12 @@
         </el-icon>
         首页
       </el-menu-item>
+      <el-menu-item index="/folder">
+        <el-icon>
+          <Folder/>
+        </el-icon>
+        文件夹
+      </el-menu-item>
       <el-menu-item index="/model">
         <el-icon>
           <CopyDocument/>
@@ -56,7 +62,7 @@
 </template>
 <script setup>
 import Footer from "@/components/Footer.vue";
-import {CopyDocument, Help, House, Moon, Paperclip, Sunny} from "@element-plus/icons-vue";
+import {CopyDocument, Folder, Help, House, Moon, Paperclip, Sunny} from "@element-plus/icons-vue";
 import {useDark, useToggle} from '@vueuse/core'
 import Constant from "@/utils/Constant";
 import {useChangeTheme} from '@/stores';

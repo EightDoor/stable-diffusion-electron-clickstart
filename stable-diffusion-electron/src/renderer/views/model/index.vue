@@ -45,10 +45,11 @@ import logger from "@/utils/logger";
 import Utils from "@/utils";
 import {DocumentAdd, Folder, Refresh} from "@element-plus/icons-vue";
 import {ElMessage} from "element-plus";
+import Config from "@/config";
 
 
 const activeName = ref("ckpt")
-const baseFolderName = "./webui-directml";
+const baseFolderName = Config.baseFolderName
 const tabsList = ref([
   {
     label: "Stable Diffusion模型(ckpt)",
