@@ -44,8 +44,10 @@ const createWindow = () => {
         mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
     }
 
-    // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    if (!app.isPackaged) {
+        // Open the DevTools.
+        mainWindow.webContents.openDevTools();
+    }
 };
 
 // This method will be called when Electron has finished
@@ -87,6 +89,7 @@ const icpListenInit = () => {
     ipcMain.on("openFolder", openFolder)
     ipcMain.on("clipboardWriteText", clipboardWriteText)
     ipcMain.handle("saveFile", saveFile)
+    ipcMain.handle("getProcessCWD", getProcessCWD)
 }
 
 // function getFileSize(size) {//把字节转换成正常文件大小
@@ -130,7 +133,11 @@ function getDeviceInfo(event) {
     })
 }
 
-const projectBasePath = path.join(__dirname, "../../../")
+let projectBasePath = path.join(__dirname, "../../../")
+if (app.isPackaged) {
+    // 生产环境
+    projectBasePath = process.cwd();
+}
 
 /**
  * 打开地址
@@ -148,6 +155,17 @@ function openExternalUrl(event, url) {
  */
 function clipboardWriteText(event, text) {
     clipboard.writeText(text)
+}
+
+/**
+ * 获取当前执行文件路径
+ */
+function getProcessCWD() {
+    if (app.isPackaged) {
+        // 生产环境
+        return app.getPath("exe")
+    }
+    return '';
 }
 
 /**

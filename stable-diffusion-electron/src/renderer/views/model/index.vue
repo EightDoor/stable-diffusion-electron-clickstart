@@ -45,37 +45,10 @@ import logger from "@/utils/logger";
 import Utils from "@/utils";
 import {DocumentAdd, Folder, Refresh} from "@element-plus/icons-vue";
 import {ElMessage} from "element-plus";
-import Config from "@/config";
 
 
 const activeName = ref("ckpt")
-const baseFolderName = Config.baseFolderName
-const tabsList = ref([
-  {
-    label: "Stable Diffusion模型(ckpt)",
-    name: "ckpt",
-    list: [],
-    path: `${baseFolderName}/models/Stable-diffusion`
-  },
-  {
-    label: "LoRA",
-    name: "lora",
-    list: [],
-    path: `${baseFolderName}/models/Lora`
-  },
-  {
-    label: "嵌入式(Embedding)",
-    name: "embedding",
-    list: [],
-    path: `${baseFolderName}/embeddings`
-  },
-  {
-    label: "超网格(Hypernetwork)",
-    name: "Hypernetwork",
-    list: [],
-    path: `${baseFolderName}/models/hypernetworks`
-  }
-])
+const tabsList = ref([])
 
 function handleClick(e) {
   console.log(e)
@@ -154,8 +127,40 @@ function addModel() {
   });
 }
 
+async function getList() {
+  const baseFolderName = await Utils.getBaseFolder()
+
+  tabsList.value = [
+    {
+      label: "Stable Diffusion模型(ckpt)",
+      name: "ckpt",
+      list: [],
+      path: `${baseFolderName}/models/Stable-diffusion`
+    },
+    {
+      label: "LoRA",
+      name: "lora",
+      list: [],
+      path: `${baseFolderName}/models/Lora`
+    },
+    {
+      label: "嵌入式(Embedding)",
+      name: "embedding",
+      list: [],
+      path: `${baseFolderName}/embeddings`
+    },
+    {
+      label: "超网格(Hypernetwork)",
+      name: "Hypernetwork",
+      list: [],
+      path: `${baseFolderName}/models/hypernetworks`
+    }
+  ]
+}
+
 onMounted(() => {
   getActiveNameFiles(activeName.value)
+  getList()
 })
 </script>
 

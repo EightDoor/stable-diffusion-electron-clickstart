@@ -1,6 +1,22 @@
 import {dayjs} from "element-plus";
+import IpcRenderer from "@/utils/IpcRenderer";
+import logger from "@/utils/logger";
 
 const Utils = {
+    /**
+     * 基础文件夹路径
+     * @returns {string}
+     */
+    async getBaseFolder() {
+        let baseFolderName = "./webui-directml";
+
+        const cwd = await IpcRenderer.getProcessCWD();
+        logger.info(cwd, 'cwd')
+        if (cwd) {
+            baseFolderName = cwd
+        }
+        return baseFolderName;
+    },
     jsonDeCode(val) {
         return JSON.parse(val)
     },
@@ -39,7 +55,7 @@ const Utils = {
      */
     formatTime(val = Date.now(), type = "YYYY-MM-DD HH:mm:ss") {
         return dayjs(val).format(type)
-    }
+    },
 }
 
 export default Utils

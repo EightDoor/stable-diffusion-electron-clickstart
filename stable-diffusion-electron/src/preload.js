@@ -12,5 +12,6 @@ contextBridge.exposeInMainWorld("electronApI", {
     getFolderFiles: (folderPath) => ipcRenderer.invoke("getFolderFiles", folderPath),
     openFolder: (folderPath) => ipcRenderer.send("openFolder", folderPath),
     clipboardWriteText: (text) => ipcRenderer.send("clipboardWriteText", text),
-    saveFile: (path, title) => ipcRenderer.invoke("saveFile", path, title)
+    saveFile: (path, title) => ipcRenderer.invoke("saveFile", path, title),
+    getProcessCWD: () => ipcRenderer.invoke("getProcessCWD")
 })

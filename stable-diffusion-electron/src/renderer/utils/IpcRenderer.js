@@ -59,6 +59,12 @@ const IpcRenderer = {
      */
     async saveFile(path) {
         return window.electronApI.saveFile(path, "添加模型");
+    },
+    /**
+     * 获取执行文件当前路径
+     */
+    getProcessCWD() {
+        return window.electronApI.getProcessCWD();
     }
 }
 
