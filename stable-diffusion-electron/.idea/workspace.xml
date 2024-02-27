@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/preload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/utils/IpcRenderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/utils/IpcRenderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/utils/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/folder/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/folder/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/views/model/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/views/model/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../webui-directml" beforeDir="false" afterPath="$PROJECT_DIR$/../webui-directml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +101,7 @@
       <workItem from="1708951386145" duration="8332000" />
       <workItem from="1709039251985" duration="730000" />
       <workItem from="1709040482105" duration="47000" />
-      <workItem from="1709041094326" duration="5071000" />
+      <workItem from="1709041094326" duration="5840000" />
     </task>
     <servers />
   </component>
