@@ -1,13 +1,13 @@
 @echo off
 
-set DIR=%~dp0system
+@REM set DIR=%~dp0system
 
-set PATH=%DIR%\git\bin;%DIR%\python;%DIR%\python\Scripts;%PATH%
-set PY_LIBS=%DIR%\python\Scripts\Lib;%DIR%\python\Scripts\Lib\site-packages
-set PY_PIP=%DIR%\python\Scripts
-set SKIP_VENV=1
-set PIP_INSTALLER_LOCATION=%DIR%\python\get-pip.py
-set TRANSFORMERS_CACHE=%DIR%\transformers-cache
+@REM set PATH=%DIR%\git\bin;%DIR%\python;%DIR%\python\Scripts;%PATH%
+@REM set PY_LIBS=%DIR%\python\Scripts\Lib;%DIR%\python\Scripts\Lib\site-packages
+@REM set PY_PIP=%DIR%\python\Scripts
+@REM set SKIP_VENV=1
+@REM set PIP_INSTALLER_LOCATION=%DIR%\python\get-pip.py
+@REM set TRANSFORMERS_CACHE=%DIR%\transformers-cache
 
 
 @REM call environment.bat

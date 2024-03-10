@@ -19,8 +19,6 @@ if (require('electron-squirrel-startup')) {
 
 let mainWindow;
 
-// log.info("test 测试数据")
-// log.error("测试错误")
 const createWindow = () => {
     // 取消顶部栏
     Menu.setApplicationMenu(null)
