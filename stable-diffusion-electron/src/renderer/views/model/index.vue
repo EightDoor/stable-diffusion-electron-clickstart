@@ -73,6 +73,8 @@ async function getFiles(path) {
 }
 
 async function getActiveNameFiles() {
+  const baseFolderName = await Utils.getBaseFolder()
+
   let index = tabsList.value.findIndex((item) => item.name === activeName.value)
   if (index === -1) {
     index = 0
@@ -128,7 +130,6 @@ function addModel() {
 
 async function getList() {
   const baseFolderName = await Utils.getBaseFolder()
-
   tabsList.value = [
     {
       label: "Stable Diffusion模型(ckpt)",

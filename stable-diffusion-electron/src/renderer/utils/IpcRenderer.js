@@ -63,7 +63,7 @@ const IpcRenderer = {
     /**
      * 获取执行文件当前路径
      */
-    getProcessCWD() {
+    async getProcessCWD() {
         return window.electronApI.getProcessCWD();
     }
 }

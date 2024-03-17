@@ -136,7 +136,10 @@ function getDeviceInfo(event) {
     })
 }
 
-let projectBasePath = path.join(__dirname, "../../../")
+const stableDiffusionWebuiPath = "./stable-diffusion-webui-directml/webui-directml";
+
+let projectBasePath = path.join(__dirname, "../../../", stableDiffusionWebuiPath)
+console.log(projectBasePath, 'projectBasePath')
 if (app.isPackaged) {
     // 生产环境
     projectBasePath = process.cwd();
@@ -163,12 +166,13 @@ function clipboardWriteText(event, text) {
 /**
  * 获取当前执行文件路径
  */
-function getProcessCWD() {
+function getProcessCWD(event, sendPath) {
     if (app.isPackaged) {
         // 生产环境
-        return app.getPath("exe");
+        return path.join(app.getPath("exe"), "../", sendPath);
+    } else {
+        return projectBasePath;
     }
-    return '';
 }
 
 /**
@@ -194,7 +198,7 @@ function saveFile(event, savePath, title = '') {
                 for (const filePath of filePaths) {
                     // 获取文件名称
                     const fileName = path.basename(filePath)
-                    const savePathResult = path.join(projectBasePath, savePath, fileName)
+                    const savePathResult = path.join(savePath, fileName)
                     await fsPromises.copyFile(filePath, savePathResult)
                 }
                 resolve({
@@ -220,18 +224,13 @@ function saveFile(event, savePath, title = '') {
  */
 function getFolderFiles(event, folder) {
     return new Promise((resolve, reject) => {
-        console.log(projectBasePath, 'projectBasePath')
-        console.log(folder, 'folder')
-
-        const folderPath = path.join(projectBasePath, folder)
-        console.log(folderPath, 'folderPath')
-        fsPromises.readdir(folderPath, {
+        fsPromises.readdir(folder, {
             recursive: false,  // 不需要读取目录内容 递归
         }).then(async (files) => {
             const list = []
             for (let i = 0; i < files.length; i++) {
                 const file = files[i];
-                const filePath = path.join(folderPath, file);
+                const filePath = path.join(folder, file);
                 const stat = await fsPromises.stat(filePath)
                 const fileType = stat.isFile() ? "文件" : stat.isDirectory() ? '文件夹' : '未知'
                 // const SHA256 = hashFileAsync(filePath, algorithmType.SHA256)
@@ -254,8 +253,9 @@ function getFolderFiles(event, folder) {
 }
 
 function openFolder(event, folderPath) {
-    const fullPath = path.join(projectBasePath, folderPath);
-    shell.openPath(fullPath)
+    folderPath = folderPath.replace(/\//g, '\\')
+    console.log(folderPath, 'folderPath')
+    shell.openPath(folderPath)
 }
 
 /**

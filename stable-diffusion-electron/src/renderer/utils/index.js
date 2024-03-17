@@ -1,21 +1,18 @@
 import {dayjs} from "element-plus";
 import IpcRenderer from "@/utils/IpcRenderer";
 import logger from "@/utils/logger";
+import Config from "@/config";
 
 const Utils = {
     /**
      * 基础文件夹路径
      * @returns {string}
      */
-    async getBaseFolder() {
-        let baseFolderName = "./stable-diffusion-webui-directml/webui-directml";
-
-        const cwd = await IpcRenderer.getProcessCWD();
-        logger.info(cwd, 'cwd  基础文件夹路径')
-        if (cwd) {
-            baseFolderName = cwd
-        }
-        return baseFolderName;
+    async getBaseFolder(path) {
+        const resultPath = Config.baseFolder + path
+        const cwd = await IpcRenderer.getProcessCWD(resultPath);
+        logger.info(cwd, 'cwd 文件夹路径')
+        return cwd
     },
     jsonDeCode(val) {
         return JSON.parse(val)
