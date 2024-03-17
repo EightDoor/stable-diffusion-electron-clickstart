@@ -129,31 +129,30 @@ function addModel() {
 }
 
 async function getList() {
-  const baseFolderName = await Utils.getBaseFolder()
   tabsList.value = [
     {
       label: "Stable Diffusion模型(ckpt)",
       name: "ckpt",
       list: [],
-      path: `${baseFolderName}/models/Stable-diffusion`
+      path: `/models/Stable-diffusion`
     },
     {
       label: "LoRA",
       name: "lora",
       list: [],
-      path: `${baseFolderName}/models/Lora`
+      path: `/models/Lora`
     },
     {
       label: "嵌入式(Embedding)",
       name: "embedding",
       list: [],
-      path: `${baseFolderName}/embeddings`
+      path: `/embeddings`
     },
     {
       label: "超网格(Hypernetwork)",
       name: "Hypernetwork",
       list: [],
-      path: `${baseFolderName}/models/hypernetworks`
+      path: `/models/hypernetworks`
     }
   ]
 

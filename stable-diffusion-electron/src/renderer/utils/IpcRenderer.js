@@ -19,8 +19,8 @@ const IpcRenderer = {
      * 一键启动
      * @returns {Promise<void>}
      */
-    oneClickStart() {
-        window.electronApI.oneClickStart();
+    oneClickStart(path) {
+        window.electronApI.oneClickStart(path);
     },
     async oneClickClose(pid) {
         return window.electronApI.oneClickClose(pid);

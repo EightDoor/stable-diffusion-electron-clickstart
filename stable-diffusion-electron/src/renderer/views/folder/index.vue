@@ -11,7 +11,6 @@
 
 import logger from "@/utils/logger";
 import IpcRenderer from "@/utils/IpcRenderer";
-import Utils from "@/utils";
 import {onMounted, ref} from 'vue';
 
 
@@ -22,47 +21,46 @@ onMounted(() => {
 })
 
 async function getList() {
-  const basePath = await Utils.getBaseFolder();
   list.value = [
     {
       title: "根目录",
       desc: ".",
-      path: `${basePath}`,
+      path: `.`,
     },
     {
       title: "扩展文件夹",
       desc: "extensions",
-      path: `${basePath}/extensions`,
+      path: `/extensions`,
     },
     {
       title: "临时文件夹",
       desc: "tmp",
-      path: `${basePath}/tmp`,
+      path: `/tmp`,
     },
     {
       title: "超分输出",
       desc: "extras-images",
-      path: `${basePath}/outputs/extras-images`,
+      path: `/outputs/extras-images`,
     },
     {
       title: "文生图(网格)",
       desc: "txt2img-grids",
-      path: `${basePath}/outputs/txt2img-grids`,
+      path: `/outputs/txt2img-grids`,
     },
     {
       title: "文生图(单图)",
       desc: "txt2img-images",
-      path: `${basePath}/outputs/txt2img-images`,
+      path: `/outputs/txt2img-images`,
     },
     {
       title: "图生图(网格)",
       desc: "img2img-grids",
-      path: `${basePath}/outputs/img2img-grids`,
+      path: `/outputs/img2img-grids`,
     },
     {
       title: "图生图(单图)",
       desc: "img2img-images",
-      path: `${basePath}/outputs/img2img-images`,
+      path: `/outputs/img2img-images`,
     },
   ]
 }

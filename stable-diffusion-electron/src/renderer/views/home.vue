@@ -168,8 +168,8 @@ const startBtnStatus = ref(true);
 const termialRef = ref();
 const childProcessData = ref()
 
-function oneClickStart() {
-  IpcRenderer.oneClickStart();
+async function oneClickStart() {
+  IpcRenderer.oneClickStart("./run-directml.bat");
 }
 
 async function oneClickClose() {

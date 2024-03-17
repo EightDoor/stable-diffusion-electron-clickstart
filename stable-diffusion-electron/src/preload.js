@@ -6,12 +6,12 @@ const {contextBridge, ipcRenderer} = require("electron")
 contextBridge.exposeInMainWorld("electronApI", {
     getDeviceInfo: () => ipcRenderer.invoke("getDeviceInfo"),
     openExternalUrl: (url) => ipcRenderer.send("openExternalUrl", url),
-    oneClickStart: () => ipcRenderer.send("oneClickStart"),
+    oneClickStart: (path) => ipcRenderer.send("oneClickStart", path),
     oneClickClose: (pid) => ipcRenderer.invoke("oneClickClose", pid),
     updateStableDiffusionChildVal: (callback) => ipcRenderer.on("update-stable-diffusion-child", (_event, value) => callback(value)),
     getFolderFiles: (folderPath) => ipcRenderer.invoke("getFolderFiles", folderPath),
     openFolder: (folderPath) => ipcRenderer.send("openFolder", folderPath),
     clipboardWriteText: (text) => ipcRenderer.send("clipboardWriteText", text),
     saveFile: (path, title) => ipcRenderer.invoke("saveFile", path, title),
-    getProcessCWD: (path) => ipcRenderer.invoke("getProcessCWD", path)
+    getProcessCWD: () => ipcRenderer.invoke("getProcessCWD")
 })

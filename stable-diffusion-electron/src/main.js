@@ -139,11 +139,12 @@ function getDeviceInfo(event) {
 const stableDiffusionWebuiPath = "./stable-diffusion-webui-directml/webui-directml";
 
 let projectBasePath = path.join(__dirname, "../../../", stableDiffusionWebuiPath)
-console.log(projectBasePath, 'projectBasePath')
 if (app.isPackaged) {
     // 生产环境
-    projectBasePath = process.cwd();
+    projectBasePath = path.join(app.getPath("exe"), "../", stableDiffusionWebuiPath);
 }
+
+log.info(projectBasePath, 'cwd exe运行文件夹地址')
 
 /**
  * 打开地址
@@ -166,13 +167,17 @@ function clipboardWriteText(event, text) {
 /**
  * 获取当前执行文件路径
  */
-function getProcessCWD(event, sendPath) {
-    if (app.isPackaged) {
-        // 生产环境
-        return path.join(app.getPath("exe"), "../", sendPath);
-    } else {
-        return projectBasePath;
-    }
+function getProcessCWD(event) {
+    return projectBasePath;
+}
+
+/**
+ * 获取文件/文件夹 最终访问路径
+ * @param savePath
+ * @returns {string}
+ */
+function getResultPath(savePath) {
+    return path.join(projectBasePath, savePath)
 }
 
 /**
@@ -182,6 +187,7 @@ function getProcessCWD(event, sendPath) {
  * @param title
  */
 function saveFile(event, savePath, title = '') {
+    savePath = getResultPath(savePath)
     return new Promise((resolve, reject) => {
         dialog.showOpenDialog({
             title,
@@ -223,6 +229,7 @@ function saveFile(event, savePath, title = '') {
  * 获取文件夹文件列表
  */
 function getFolderFiles(event, folder) {
+    folder = getResultPath(folder)
     return new Promise((resolve, reject) => {
         fsPromises.readdir(folder, {
             recursive: false,  // 不需要读取目录内容 递归
@@ -253,9 +260,8 @@ function getFolderFiles(event, folder) {
 }
 
 function openFolder(event, folderPath) {
-    folderPath = folderPath.replace(/\//g, '\\')
-    console.log(folderPath, 'folderPath')
-    shell.openPath(folderPath)
+    const resultPath = path.join(projectBasePath, folderPath)
+    shell.openPath(resultPath)
 }
 
 /**
@@ -298,9 +304,9 @@ function oneClickClose(event, pid) {
 /**
  * 一键启动 stable diffusion
  */
-function oneClickStart(event) {
-    const pathUrl = path.join(projectBasePath, "run-directml.bat")
-    executeProcessChild(pathUrl, mainToRendererStable, [], {
+function oneClickStart(event, sendPath) {
+    const resultPath = path.join(projectBasePath, "../", sendPath)
+    executeProcessChild(resultPath, mainToRendererStable, [], {
         cwd: projectBasePath,
         detached: true,
         stdio: "ignore",
