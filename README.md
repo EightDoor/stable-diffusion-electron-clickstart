@@ -28,7 +28,4 @@
 - 进入`stable-diffusion-electron`目录
 - 安装依赖 `yarn install`
 - 运行 `npm run dev`
-- 打包 `npm run package`
-
-# 效果图
-- 
+- 打包 `npm run make`
