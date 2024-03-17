@@ -4,9 +4,7 @@ const {FuseV1Options, FuseVersion} = require('@electron/fuses');
 module.exports = {
     packagerConfig: {
         asar: true,
-        protocols: {
-            "name": "画境导航者=>一键启动",
-        }
+        name: "画境导航者一键启动",
     },
     publishers: [
         {
