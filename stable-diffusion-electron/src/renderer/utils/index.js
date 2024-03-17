@@ -8,10 +8,10 @@ const Utils = {
      * @returns {string}
      */
     async getBaseFolder() {
-        let baseFolderName = "./webui-directml";
+        let baseFolderName = "./stable-diffusion-webui-directml/webui-directml";
 
         const cwd = await IpcRenderer.getProcessCWD();
-        logger.info(cwd, 'cwd')
+        logger.info(cwd, 'cwd  基础文件夹路径')
         if (cwd) {
             baseFolderName = cwd
         }

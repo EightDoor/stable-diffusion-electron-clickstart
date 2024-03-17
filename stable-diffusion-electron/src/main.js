@@ -42,10 +42,15 @@ const createWindow = () => {
         mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
     }
 
-    if (!app.isPackaged) {
-        // Open the DevTools.
-        mainWindow.webContents.openDevTools();
-    }
+    // openDevTools
+
+    // if (!app.isPackaged) {
+    //     // Open the DevTools.
+    //     mainWindow.webContents.openDevTools();
+    // }
+
+    mainWindow.webContents.openDevTools();
+
 };
 
 // This method will be called when Electron has finished
@@ -161,7 +166,7 @@ function clipboardWriteText(event, text) {
 function getProcessCWD() {
     if (app.isPackaged) {
         // 生产环境
-        return app.getPath("exe")
+        return app.getPath("exe");
     }
     return '';
 }
@@ -184,7 +189,6 @@ function saveFile(event, savePath, title = '') {
                 }
             ]
         }).then(async res => {
-            console.log(res, 'res')
             if (!res.canceled) {
                 const filePaths = res.filePaths;
                 for (const filePath of filePaths) {

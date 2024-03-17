@@ -87,7 +87,6 @@ async function getActiveNameFiles() {
     return item;
   })
   tabsList.value[index].list = result;
-  console.log(tabsList.value)
 }
 
 function formatType(val) {
@@ -156,10 +155,11 @@ async function getList() {
       path: `${baseFolderName}/models/hypernetworks`
     }
   ]
+
+  getActiveNameFiles(activeName.value)
 }
 
 onMounted(() => {
-  getActiveNameFiles(activeName.value)
   getList()
 })
 </script>
