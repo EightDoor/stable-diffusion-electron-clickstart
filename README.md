@@ -2,7 +2,7 @@
 
 - stable-diffusion启动器
 - 支持功能
-    - 一键启动
+    - “画境导航者” 一键启动
     - 打开文件夹（tmp、txt2img-images）等
     - 模型所在文件夹（ckpt、LORA、Embedding、Hupernetwork）
         - 打开文件夹
@@ -28,6 +28,7 @@
 - 进入`stable-diffusion-electron`目录
 - 安装依赖 `yarn install`
 - 运行 `npm run dev`
+- 打包 `npm run package`
 
 # 效果图
 - 

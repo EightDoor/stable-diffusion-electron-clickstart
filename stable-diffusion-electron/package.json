@@ -2,7 +2,7 @@
   "name": "stable-diffusion-electron",
   "productName": "stable-diffusion-electron",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "画境导航者 - 启动器，让AI与你一同创作，让画笔随心所欲!",
   "main": ".vite/build/main.js",
   "scripts": {
     "debug": "npm run start -- --inspect-electron",
@@ -17,6 +17,9 @@
   "author": {
     "name": "eightdoor",
     "email": "851708184@qq.com"
+  },
+  "repository": {
+    "url": "https://github.com/EightDoor/stable-diffusion-electron-clickstart/tree/master/stable-diffusion-electron"
   },
   "license": "MIT",
   "devDependencies": {

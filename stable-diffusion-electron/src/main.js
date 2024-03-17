@@ -7,9 +7,9 @@ const log = require("electron-log/main")
 const systeminfo = require("systeminformation")
 const crypto = require("crypto")
 const kill = require("tree-kill")
-// const {updateElectronApp} = require('update-electron-app');
+const {updateElectronApp} = require('update-electron-app');
 
-// updateElectronApp();
+updateElectronApp();
 
 log.initialize()
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.

@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="refactor(路径): 前端涉及基础路径的，全部在electron主线程中定义，render端只负责传递地址">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="aa194c49-0ec3-4cad-a470-de98a94de7ea" name="更改" comment="docs(文档): 更新 README.md，区分线上、本地 打开devtools">
+      <change afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forge.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/forge.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stable-diffusion-webui-directml/webui-directml" beforeDir="false" afterPath="$PROJECT_DIR$/../stable-diffusion-webui-directml/webui-directml" afterDir="false" />
     </list>
@@ -110,7 +115,7 @@
       <workItem from="1710340056205" duration="317000" />
       <workItem from="1710507651930" duration="94000" />
       <workItem from="1710553977224" duration="10000" />
-      <workItem from="1710645218914" duration="15631000" />
+      <workItem from="1710645218914" duration="16909000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修改文件路径  从render端获取默认的项目exe位置  兼容线上、本地">
       <option name="closed" value="true" />
@@ -128,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710679610906</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="docs(文档): 更新 README.md，区分线上、本地 打开devtools">
+      <option name="closed" value="true" />
+      <created>1710681785094</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710681785094</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +153,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="fix: 修改文件路径  从render端获取默认的项目exe位置  兼容线上、本地" />
     <MESSAGE value="refactor(路径): 前端涉及基础路径的，全部在electron主线程中定义，render端只负责传递地址" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(路径): 前端涉及基础路径的，全部在electron主线程中定义，render端只负责传递地址" />
+    <MESSAGE value="docs(文档): 更新 README.md，区分线上、本地 打开devtools" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs(文档): 更新 README.md，区分线上、本地 打开devtools" />
   </component>
 </project>

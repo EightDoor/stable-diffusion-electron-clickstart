@@ -4,7 +4,22 @@ const {FuseV1Options, FuseVersion} = require('@electron/fuses');
 module.exports = {
     packagerConfig: {
         asar: true,
+        protocols: {
+            "name": "画境导航者=>一键启动",
+        }
     },
+    publishers: [
+        {
+            name: '@electron-forge/publisher-github',
+            config: {
+                repository: {
+                    owner: 'me',
+                    name: 'EightDoor'
+                },
+                prerelease: true
+            }
+        }
+    ],
     rebuildConfig: {},
     makers: [
         {
