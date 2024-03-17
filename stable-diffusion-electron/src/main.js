@@ -42,14 +42,10 @@ const createWindow = () => {
         mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
     }
 
-    // openDevTools
-
-    // if (!app.isPackaged) {
-    //     // Open the DevTools.
-    //     mainWindow.webContents.openDevTools();
-    // }
-
-    mainWindow.webContents.openDevTools();
+    if (!app.isPackaged) {
+        // Open the DevTools.
+        mainWindow.webContents.openDevTools();
+    }
 
 };
 
