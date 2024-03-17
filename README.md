@@ -1,8 +1,11 @@
+# 前言
+- 使用vue3 vite electron element-plus构建，正好学习下electron
+
 # 简介
 
-- stable-diffusion启动器
+- stable-diffusion “画境导航者” 启动器
 - 支持功能
-    - “画境导航者” 一键启动
+    - 一键启动
     - 打开文件夹（tmp、txt2img-images）等
     - 模型所在文件夹（ckpt、LORA、Embedding、Hupernetwork）
         - 打开文件夹
