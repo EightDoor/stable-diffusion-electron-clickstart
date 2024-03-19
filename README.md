@@ -32,3 +32,6 @@
 - 安装依赖 `yarn install`
 - 运行 `npm run dev`
 - 打包 `npm run make`
+
+# 效果
+- [](/static/1.png)
