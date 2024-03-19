@@ -34,4 +34,7 @@
 - 打包 `npm run make`
 
 # 效果
-- [](/static/1.png)
+- ![首页](./static/1.png)
+- ![文件夹](./static/2.png)
+- ![模型](./static/3.png)
+- ![暗黑模式](./static/4.png)
